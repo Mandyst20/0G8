@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "@/App.css";
 
 function App() {
-  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     area: "",
     weeklyRevenue: "",
@@ -13,47 +12,52 @@ function App() {
   });
   const [results, setResults] = useState(null);
 
-  const questions = [
-    "Klanten lopen regelmatig een ronde zonder iets te kopen.",
-    "Ik moet klanten vaak uitleggen waar ze moeten beginnen of wat het verschil is tussen producten.",
-    "Producten die goed verkopen staan verspreid door de winkel.",
-    "Tijdens drukte wordt het snel onrustig en haken klanten af.",
+  const questionsData = [
+    {
+      question: "Klanten lopen regelmatig een ronde zonder iets te kopen.",
+      problem: "Onduidelijke winkelroute en productpresentatie",
+      solution: "Creëer een logische looproute met duidelijke zones en signage. Plaats populaire producten strategisch verspreid om klanten door de hele winkel te leiden."
+    },
+    {
+      question: "Ik moet klanten vaak uitleggen waar ze moeten beginnen of wat het verschil is tussen producten.",
+      problem: "Gebrek aan heldere communicatie en productinformatie",
+      solution: "Verbeter signage en productetiketten. Gebruik informatieborden, QR-codes of digitale schermen om productinformatie duidelijk te maken. Train personeel in proactieve klantenservice."
+    },
+    {
+      question: "Producten die goed verkopen staan verspreid door de winkel.",
+      problem: "Suboptimale productplaatsing en merchandising",
+      solution: "Analyseer verkoopdata en hergroepeer producten logisch. Creëer thematische zones of productcombinaties die natuurlijk bij elkaar horen. Plaats bestsellers op strategische plekken."
+    },
+    {
+      question: "Tijdens drukte wordt het snel onrustig en haken klanten af.",
+      problem: "Inadequate ruimte-indeling en crowd management",
+      solution: "Verbreed gangpaden, verminder obstakels en creëer meerdere kassa-opties. Implementeer een wachtrij-managementsysteem en zorg voor voldoende personeel tijdens piekuren."
+    }
   ];
 
   const handleInputChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };
 
-  const handleNextStep = () => {
-    if (step === 1) {
-      if (!formData.area || !formData.weeklyRevenue) {
-        alert("Vul beide velden in om door te gaan.");
-        return;
-      }
-      setStep(2);
-    } else if (step === 2) {
-      if (
-        formData.q1 === null ||
-        formData.q2 === null ||
-        formData.q3 === null ||
-        formData.q4 === null
-      ) {
-        alert("Beantwoord alle vragen om door te gaan.");
-        return;
-      }
+  useEffect(() => {
+    // Auto-calculate when all fields are filled
+    if (
+      formData.area &&
+      formData.weeklyRevenue &&
+      formData.q1 !== null &&
+      formData.q2 !== null &&
+      formData.q3 !== null &&
+      formData.q4 !== null
+    ) {
       calculateResults();
-      setStep(3);
+    } else {
+      setResults(null);
     }
-  };
-
-  const handlePrevStep = () => {
-    setStep(step - 1);
-  };
+  }, [formData]);
 
   const calculateResults = () => {
-    const yesCount = [formData.q1, formData.q2, formData.q3, formData.q4].filter(
-      (answer) => answer === true
-    ).length;
+    const answers = [formData.q1, formData.q2, formData.q3, formData.q4];
+    const yesCount = answers.filter((answer) => answer === true).length;
 
     let percentage = 0;
     if (yesCount <= 1) percentage = 10;
@@ -68,12 +72,19 @@ function App() {
     const untappedRevenue = yearlyRevenue * (percentage / 100);
     const potentialRevenue = yearlyRevenue + untappedRevenue;
 
+    // Get identified problems
+    const identifiedProblems = answers.map((answer, index) => ({
+      hasIssue: answer === true,
+      ...questionsData[index]
+    })).filter(item => item.hasIssue);
+
     setResults({
       yearlyRevenue,
       revenuePerM2,
       untappedRevenue,
       potentialRevenue,
       percentage,
+      identifiedProblems
     });
   };
 
@@ -87,7 +98,6 @@ function App() {
   };
 
   const resetCalculator = () => {
-    setStep(1);
     setFormData({
       area: "",
       weeklyRevenue: "",
