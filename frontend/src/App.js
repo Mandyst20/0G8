@@ -131,7 +131,7 @@ function App() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-base font-semibold text-gray-700 mb-2">
                     Winkeloppervlakte (m²)
                   </label>
                   <input
@@ -139,13 +139,13 @@ function App() {
                     data-testid="area-input"
                     value={formData.area}
                     onChange={(e) => handleInputChange("area", e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
                     placeholder="Bijv. 150"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-base font-semibold text-gray-700 mb-2">
                     Gemiddelde omzet per week (€)
                   </label>
                   <input
@@ -153,7 +153,7 @@ function App() {
                     data-testid="weekly-revenue-input"
                     value={formData.weeklyRevenue}
                     onChange={(e) => handleInputChange("weeklyRevenue", e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
                     placeholder="Bijv. 5000"
                   />
                 </div>
