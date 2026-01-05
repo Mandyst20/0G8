@@ -266,33 +266,35 @@ function App() {
                 {/* Problems & Solutions */}
                 {results.identifiedProblems.length > 0 && (
                   <div className="mt-8">
-                    <h3 className="text-2xl font-light text-gray-800 mb-6 flex items-center gap-2">
-                      <span className="text-2xl">🔍</span>
-                      Waarom blijft dit geld liggen?
-                    </h3>
+                    <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
+                      <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                        <span className="text-2xl">🔍</span>
+                        Waarom blijft dit geld liggen?
+                      </h3>
+                    </div>
                     <div className="space-y-6">
                       {results.identifiedProblems.map((problem, index) => (
-                        <div key={index} className="bg-pink-50 border border-pink-200 rounded-xl p-6 shadow-sm">
+                        <div key={index} className="bg-orange-50 border border-orange-200 rounded-xl p-6 shadow-sm">
                           <div className="flex items-start space-x-3 mb-4">
-                            <div className="flex-shrink-0 w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">
+                            <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
                               {index + 1}
                             </div>
                             <div className="flex-1">
-                              <h4 className="font-semibold text-gray-800 mb-2">
+                              <h4 className="font-bold text-gray-800 mb-2 text-base">
                                 Probleem: {problem.problem}
                               </h4>
-                              <p className="text-sm text-gray-600 italic">
+                              <p className="text-base text-gray-600 italic">
                                 "{problem.question}"
                               </p>
                             </div>
                           </div>
                           
                           <div className="bg-white rounded-lg p-5 border-l-4 border-yellow-400">
-                            <h5 className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 flex items-center gap-1">
+                            <h5 className="text-sm font-bold text-gray-700 uppercase tracking-wider mb-2 flex items-center gap-1">
                               <span className="text-base">💡</span>
                               Wat moet je verbeteren:
                             </h5>
-                            <p className="text-sm text-gray-700 leading-relaxed">
+                            <p className="text-base text-gray-700 leading-relaxed">
                               {problem.solution}
                             </p>
                           </div>
