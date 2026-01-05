@@ -16,151 +16,22 @@ function App() {
     {
       question: "Klanten lopen regelmatig een ronde zonder iets te kopen.",
       problem: "Onduidelijke winkelroute en productpresentatie",
-      solution: "Creëer een logische looproute met duidelijke zones en signage. Plaats populaire producten strategisch verspreid om klanten door de hele winkel te leiden.",
-      detailedTips: [
-        {
-          title: "Optimale looproute creëren",
-          tips: [
-            "Plaats een 'power wall' direct tegenover de ingang met je meest aantrekkelijke producten",
-            "Leid klanten tegen de klok in (de meeste mensen gaan rechts) voor langere verblijftijd",
-            "Zorg dat klanten door 70-80% van de winkel lopen voordat ze bij de kassa komen",
-            "Gebruik vloerstickers of markeringen om een natuurlijke flow te creëren"
-          ]
-        },
-        {
-          title: "Strategische productplaatsing",
-          tips: [
-            "Plaats bestsellers en impulsaankopen op ooghoogte (120-160cm)",
-            "Zet complementaire producten bij elkaar (bijv. wijn bij kaas, accessoires bij kleding)",
-            "Gebruik de 'decompressie zone' (eerste 2-3 meter) alleen voor sfeer, niet voor verkoop",
-            "Creëer 'hot spots' bij elke bocht of einde gangpad met opvallende displays"
-          ]
-        },
-        {
-          title: "Visuele geleiding",
-          tips: [
-            "Gebruik kleurcodering per productcategorie of zone",
-            "Hang overhead signage op 2-2.5 meter hoogte voor zichtbaarheid",
-            "Installeer goede verlichting die producten highlight (3x helderder dan gangpaden)",
-            "Gebruik spiegels strategisch om de winkel groter te laten lijken en overzicht te bieden"
-          ]
-        }
-      ]
+      solution: "Creëer een logische looproute met duidelijke zones en signage. Plaats populaire producten strategisch verspreid om klanten door de hele winkel te leiden."
     },
     {
       question: "Ik moet klanten vaak uitleggen waar ze moeten beginnen of wat het verschil is tussen producten.",
       problem: "Gebrek aan heldere communicatie en productinformatie",
-      solution: "Verbeter signage en productetiketten. Gebruik informatieborden, QR-codes of digitale schermen om productinformatie duidelijk te maken. Train personeel in proactieve klantenservice.",
-      detailedTips: [
-        {
-          title: "Effectieve signage implementeren",
-          tips: [
-            "Gebruik de 3-seconden regel: klanten moeten binnen 3 seconden weten waar ze zijn",
-            "Maak duidelijke categorieën met grote, leesbare letters (minimaal 5cm hoog)",
-            "Plaats 'You Are Here' plattegronden bij de ingang en cruciale punten",
-            "Gebruik iconen en symbolen naast tekst voor snelle herkenning"
-          ]
-        },
-        {
-          title: "Productinformatie optimaliseren",
-          tips: [
-            "Gebruik prijskaartjes met minimaal 3 datapunten: prijs, kernvoordeel, USP",
-            "Implementeer QR-codes die linken naar productdemo's of reviews",
-            "Creëer 'shelf talkers' (kleine kaartjes aan schap) met '3 redenen om te kiezen'",
-            "Zet vergelijkingstabellen bij vergelijkbare producten (goed-beter-best)",
-            "Voeg 'bestseller' of 'aanbevolen' badges toe bij populaire keuzes"
-          ]
-        },
-        {
-          title: "Personeel training",
-          tips: [
-            "Train personeel om binnen 30 seconden klanten te benaderen met 'Kan ik helpen?'",
-            "Maak productkennis checklists die personeel moet beheersen",
-            "Implementeer 'expert badges' zodat klanten weten wie ze kunnen vragen",
-            "Organiseer wekelijkse 15-min producttrainingen over nieuwe items"
-          ]
-        }
-      ]
+      solution: "Verbeter signage en productetiketten. Gebruik informatieborden, QR-codes of digitale schermen om productinformatie duidelijk te maken. Train personeel in proactieve klantenservice."
     },
     {
       question: "Producten die goed verkopen staan verspreid door de winkel.",
       problem: "Suboptimale productplaatsing en merchandising",
-      solution: "Analyseer verkoopdata en hergroepeer producten logisch. Creëer thematische zones of productcombinaties die natuurlijk bij elkaar horen. Plaats bestsellers op strategische plekken.",
-      detailedTips: [
-        {
-          title: "Data-gedreven herindeling",
-          tips: [
-            "Analyseer je kassadata: welke 20% producten genereren 80% van de omzet?",
-            "Groepeer producten op aankoopfrequentie: dagelijks/wekelijks/maandelijks",
-            "Plaats 'destination products' (die klanten speciaal komen halen) achterin de winkel",
-            "Zet impulsaankopen en complementaire producten in het natuurlijke looppad"
-          ]
-        },
-        {
-          title: "Merchandising technieken",
-          tips: [
-            "Gebruik de 'Rule of Three': groepeer producten in drieën voor visuele aantrekkingskracht",
-            "Creëer 'lifestyle zones' of 'solution centers' (bijv. 'ontbijt', 'sport', 'avondeten')",
-            "Implementeer cross-merchandising: plaats gerelateerde producten uit verschillende categorieën samen",
-            "Gebruik verticale merchandising: alle varianten van 1 product verticaal, makkelijker vergelijken",
-            "Rotate je displays elke 2-3 weken om 'banner blindness' te voorkomen"
-          ]
-        },
-        {
-          title: "Strategische plaatsing bestsellers",
-          tips: [
-            "Plaats je top 10 bestsellers op strategische plekken langs de looproute",
-            "Gebruik bestsellers als 'ankers' aan begin en einde van gangpaden",
-            "Creëer een 'featured' of 'bestseller' sectie bij de ingang voor social proof",
-            "Dubbele facing voor bestsellers: geef ze 2x zoveel schapruimte als normaal"
-          ]
-        }
-      ]
+      solution: "Analyseer verkoopdata en hergroepeer producten logisch. Creëer thematische zones of productcombinaties die natuurlijk bij elkaar horen. Plaats bestsellers op strategische plekken."
     },
     {
       question: "Tijdens drukte wordt het snel onrustig en haken klanten af.",
       problem: "Inadequate ruimte-indeling en crowd management",
-      solution: "Verbreed gangpaden, verminder obstakels en creëer meerdere kassa-opties. Implementeer een wachtrij-managementsysteem en zorg voor voldoende personeel tijdens piekuren.",
-      detailedTips: [
-        {
-          title: "Ruimte-optimalisatie",
-          tips: [
-            "Minimale gangpadbreedte: 120cm voor 1 winkelwagen, 180cm voor 2 winkelwagens",
-            "Verwijder of verplaats displays die binnen 50cm van gangpad staan",
-            "Creëer 'ademruimte zones' om de 10 meter: iets bredere plekken waar mensen kunnen stoppen",
-            "Gebruik lage schappen (<120cm) in het midden, hoge (180cm+) aan de muren voor ruimtegevoel"
-          ]
-        },
-        {
-          title: "Kassazone optimaliseren",
-          tips: [
-            "Regel: 1 kassa per 15-20 klanten tijdens piekuren",
-            "Implementeer een 'serpentine' wachtrij (1 rij, meerdere kassa's) voor eerlijkheid",
-            "Plaats een digitaal display met wachttijd-indicator ('verwachte wachttijd: 3 min')",
-            "Creëer een express-kassa voor klanten met < 5 artikelen",
-            "Zorg voor 2 meter wachtruimte per kassa om opstoppingen te voorkomen"
-          ]
-        },
-        {
-          title: "Crowd management tijdens drukte",
-          tips: [
-            "Implementeer 'peak hour staffing': 30% meer personeel tijdens verwachte drukte",
-            "Train personeel in 'floor management': actief klanten helpen en doorstroom bewaken",
-            "Gebruik stanchions of touwafzettingen om natuurlijke looproutes te creëren",
-            "Plaats een medewerker bij de ingang tijdens drukte voor eerste directie",
-            "Overweeg een 'appointment shopping' optie voor drukke momenten"
-          ]
-        },
-        {
-          title: "Wachttijd perceptie verbeteren",
-          tips: [
-            "Plaats interessante content in wachtzones (nieuwe producten, inspiratie, tablet)",
-            "Zet muziek iets sneller tijdens drukte (klanten bewegen sneller)",
-            "Communiceer verwachte wachttijd: onzekerheid voelt langer dan daadwerkelijke wachten",
-            "Bied koffie/water aan bij >5 min wachttijd voor positieve associatie"
-          ]
-        }
-      ]
+      solution: "Verbreed gangpaden, verminder obstakels en creëer meerdere kassa-opties. Implementeer een wachtrij-managementsysteem en zorg voor voldoende personeel tijdens piekuren."
     }
   ];
 
