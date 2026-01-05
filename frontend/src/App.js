@@ -40,7 +40,6 @@ function App() {
   };
 
   useEffect(() => {
-    // Auto-calculate when all fields are filled
     if (
       formData.area &&
       formData.weeklyRevenue &&
@@ -72,7 +71,6 @@ function App() {
     const untappedRevenue = yearlyRevenue * (percentage / 100);
     const potentialRevenue = yearlyRevenue + untappedRevenue;
 
-    // Get identified problems
     const identifiedProblems = answers.map((answer, index) => ({
       hasIssue: answer === true,
       ...questionsData[index]
@@ -111,123 +109,87 @@ function App() {
 
   return (
     <div className="App">
-      <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4">
-              <div className="px-4 py-1.5 bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase">
-                RETAIL ANALYSE TOOL
-              </div>
-            </div>
-            <h1 className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
-              Winkel Omzetanalyse
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-light text-gray-800 mb-3">
+              Online Rekentool
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Ontdek het verborgen potentieel van uw fysieke winkel en krijg concrete verbeteradviezen
+            <p className="text-gray-600 text-lg font-light">
+              Ontdek het potentieel van uw winkel
             </p>
           </div>
 
           {/* Main Content Card */}
-          <div className="bg-white border border-gray-200 p-12 sm:p-16 mb-10">
+          <div className="bg-white rounded-2xl shadow-md p-10 mb-8">
             {/* Input Section */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
-                <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
-                  1
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-wide">
-                  Basisgegevens
-                </h2>
-              </div>
+            <div className="mb-10">
+              <h2 className="text-2xl font-light text-gray-800 mb-6">Basisgegevens</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label
-                    htmlFor="area"
-                    className="block text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide"
-                  >
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Winkeloppervlakte (m²)
                   </label>
                   <input
-                    id="area"
                     type="number"
                     data-testid="area-input"
                     value={formData.area}
                     onChange={(e) => handleInputChange("area", e.target.value)}
-                    className="w-full px-4 py-3 border-2 border-gray-300 focus:border-blue-600 transition-all outline-none text-gray-900 text-lg font-medium bg-white"
-                    placeholder="150"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800"
+                    placeholder="Bijv. 150"
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="weeklyRevenue"
-                    className="block text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide"
-                  >
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
                     Gemiddelde omzet per week (€)
                   </label>
                   <input
-                    id="weeklyRevenue"
                     type="number"
                     data-testid="weekly-revenue-input"
                     value={formData.weeklyRevenue}
-                    onChange={(e) =>
-                      handleInputChange("weeklyRevenue", e.target.value)
-                    }
-                    className="w-full px-4 py-3 border-2 border-gray-300 focus:border-blue-600 transition-all outline-none text-gray-900 text-lg font-medium bg-white"
-                    placeholder="5000"
+                    onChange={(e) => handleInputChange("weeklyRevenue", e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800"
+                    placeholder="Bijv. 5000"
                   />
                 </div>
               </div>
             </div>
 
             {/* Diagnosis Questions */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
-                <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
-                  2
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-wide">
-                  Diagnosevragen
-                </h2>
-              </div>
-              <p className="text-gray-600 mb-8 text-base">
+            <div className="mb-10">
+              <h2 className="text-2xl font-light text-gray-800 mb-6">Diagnosevragen</h2>
+              <p className="text-gray-600 mb-6 font-light">
                 Beantwoord onderstaande vragen eerlijk voor een accurate analyse.
               </p>
 
               <div className="space-y-4">
                 {questionsData.map((item, index) => (
-                  <div
-                    key={index}
-                    className="border-2 border-gray-200 p-6 bg-white"
-                  >
-                    <p className="text-gray-900 mb-4 font-medium text-base leading-relaxed">
+                  <div key={index} className="border border-gray-200 rounded-xl p-5 bg-white">
+                    <p className="text-gray-700 mb-3 font-normal">
                       {index + 1}. {item.question}
                     </p>
-                    <div className="flex gap-4">
+                    <div className="flex space-x-3">
                       <button
-                        onClick={() =>
-                          handleInputChange(`q${index + 1}`, true)
-                        }
+                        onClick={() => handleInputChange(`q${index + 1}`, true)}
                         data-testid={`question-${index + 1}-yes-btn`}
-                        className={`flex-1 py-3 border-2 transition-all duration-200 font-semibold text-base ${
+                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-medium ${
                           formData[`q${index + 1}`] === true
-                            ? "bg-blue-600 text-white border-blue-600"
-                            : "bg-white text-gray-900 border-gray-300 hover:border-gray-400"
+                            ? "bg-pink-500 text-white"
+                            : "bg-white text-gray-700 border border-gray-300 hover:border-pink-300"
                         }`}
                       >
                         Ja
                       </button>
                       <button
-                        onClick={() =>
-                          handleInputChange(`q${index + 1}`, false)
-                        }
+                        onClick={() => handleInputChange(`q${index + 1}`, false)}
                         data-testid={`question-${index + 1}-no-btn`}
-                        className={`flex-1 py-3 border-2 transition-all duration-200 font-semibold text-base ${
+                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-medium ${
                           formData[`q${index + 1}`] === false
-                            ? "bg-gray-900 text-white border-gray-900"
-                            : "bg-white text-gray-900 border-gray-300 hover:border-gray-400"
+                            ? "bg-gray-700 text-white"
+                            : "bg-white text-gray-700 border border-gray-300 hover:border-gray-400"
                         }`}
                       >
                         Nee
@@ -240,32 +202,27 @@ function App() {
 
             {/* Results Section */}
             {results && (
-              <div className="space-y-12 pt-16 border-t-2 border-gray-900">
-                <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
-                  <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
-                    3
-                  </div>
-                  <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-wide">
-                    Uw Resultaten
-                  </h2>
+              <div className="space-y-8 pt-8 border-t border-gray-200">
+                <div>
+                  <h2 className="text-2xl font-light text-gray-800 mb-6">Jouw Resultaten</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Block A - Current Situation */}
-                  <div className="bg-gray-50 border-2 border-gray-300 p-8" data-testid="results-block-a">
-                    <div className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
-                      Huidige situatie
-                    </div>
-                    <div className="space-y-4">
+                  <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm" data-testid="results-block-a">
+                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                      📊 Huidige situatie
+                    </h3>
+                    <div className="space-y-3">
                       <div>
-                        <div className="text-sm text-gray-600 mb-1 font-medium">Jaaromzet</div>
-                        <div className="text-3xl font-bold text-gray-900" data-testid="yearly-revenue">
+                        <div className="text-sm text-gray-600 mb-1">Jaaromzet:</div>
+                        <div className="text-2xl font-semibold text-gray-800" data-testid="yearly-revenue">
                           {formatCurrency(results.yearlyRevenue)}
                         </div>
                       </div>
                       <div>
-                        <div className="text-sm text-gray-600 mb-1 font-medium">Omzet per m²</div>
-                        <div className="text-2xl font-semibold text-gray-900" data-testid="revenue-per-m2">
+                        <div className="text-sm text-gray-600 mb-1">Omzet per m² per jaar:</div>
+                        <div className="text-xl font-medium text-gray-700" data-testid="revenue-per-m2">
                           {formatCurrency(results.revenuePerM2)}
                         </div>
                       </div>
@@ -273,29 +230,29 @@ function App() {
                   </div>
 
                   {/* Block B - Untapped Revenue */}
-                  <div className="bg-blue-50 border-2 border-blue-600 p-8" data-testid="results-block-b">
-                    <div className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-6">
-                      Structureel onbenut
-                    </div>
+                  <div className="bg-amber-50 rounded-xl border border-amber-200 p-6 shadow-sm" data-testid="results-block-b">
+                    <h3 className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-4">
+                      ⚠️ Structureel onbenut
+                    </h3>
                     <div>
-                      <div className="text-sm text-gray-700 mb-2 font-medium">Bedrag dat blijft liggen</div>
-                      <div className="text-4xl font-bold text-blue-600 mb-3" data-testid="untapped-revenue">
+                      <div className="text-sm text-gray-700 mb-2">Bedrag dat jaarlijks blijft liggen:</div>
+                      <div className="text-3xl font-bold text-amber-600 mb-3" data-testid="untapped-revenue">
                         {formatCurrency(results.untappedRevenue)}
                       </div>
-                      <div className="text-xs text-gray-700 bg-white px-3 py-2 border border-blue-200">
-                        ≈ {results.percentage}% van huidige omzet
+                      <div className="text-xs text-gray-600 italic bg-white px-3 py-2 rounded-lg">
+                        Dit is ongeveer {results.percentage}% van je huidige omzet die je misloopt door onderstaande problemen.
                       </div>
                     </div>
                   </div>
 
                   {/* Block C - After Optimization */}
-                  <div className="bg-gray-900 border-2 border-gray-900 p-8" data-testid="results-block-c">
-                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
-                      Na optimalisatie
-                    </div>
+                  <div className="bg-emerald-50 rounded-xl border border-emerald-200 p-6 shadow-sm" data-testid="results-block-c">
+                    <h3 className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-4">
+                      ✨ Na optimalisatie
+                    </h3>
                     <div>
-                      <div className="text-sm text-gray-300 mb-2 font-medium">Potentiële jaaromzet</div>
-                      <div className="text-4xl font-bold text-white" data-testid="potential-revenue">
+                      <div className="text-sm text-gray-700 mb-2">Potentiële jaaromzet na verbetering:</div>
+                      <div className="text-3xl font-bold text-emerald-600" data-testid="potential-revenue">
                         {formatCurrency(results.potentialRevenue)}
                       </div>
                     </div>
@@ -304,20 +261,21 @@ function App() {
 
                 {/* Problems & Solutions */}
                 {results.identifiedProblems.length > 0 && (
-                  <div className="mt-16">
-                    <h3 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wide border-b-2 border-gray-900 pb-4">
+                  <div className="mt-8">
+                    <h3 className="text-2xl font-light text-gray-800 mb-6 flex items-center gap-2">
+                      <span className="text-2xl">🔍</span>
                       Waarom blijft dit geld liggen?
                     </h3>
-                    <div className="space-y-8">
+                    <div className="space-y-6">
                       {results.identifiedProblems.map((problem, index) => (
-                        <div key={index} className="border-2 border-gray-300 p-8 bg-white">
-                          <div className="flex items-start gap-4 mb-6">
-                            <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white flex items-center justify-center font-bold text-lg">
+                        <div key={index} className="bg-pink-50 border border-pink-200 rounded-xl p-6 shadow-sm">
+                          <div className="flex items-start space-x-3 mb-4">
+                            <div className="flex-shrink-0 w-8 h-8 bg-pink-500 text-white rounded-full flex items-center justify-center font-semibold text-sm">
                               {index + 1}
                             </div>
                             <div className="flex-1">
-                              <h4 className="font-bold text-gray-900 mb-2 text-lg uppercase tracking-wide">
-                                {problem.problem}
+                              <h4 className="font-semibold text-gray-800 mb-2">
+                                Probleem: {problem.problem}
                               </h4>
                               <p className="text-sm text-gray-600 italic">
                                 "{problem.question}"
@@ -325,11 +283,12 @@ function App() {
                             </div>
                           </div>
                           
-                          <div className="bg-gray-50 border-l-4 border-blue-600 p-6">
-                            <h5 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3">
+                          <div className="bg-white rounded-lg p-5 border-l-4 border-yellow-400">
+                            <h5 className="text-xs font-bold text-gray-700 uppercase tracking-wider mb-2 flex items-center gap-1">
+                              <span className="text-base">💡</span>
                               Wat moet je verbeteren:
                             </h5>
-                            <p className="text-gray-900 leading-relaxed">
+                            <p className="text-sm text-gray-700 leading-relaxed">
                               {problem.solution}
                             </p>
                           </div>
@@ -340,21 +299,21 @@ function App() {
                 )}
 
                 {results.identifiedProblems.length === 0 && (
-                  <div className="bg-gray-900 border-2 border-gray-900 p-8 mt-10 text-white">
-                    <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">
-                      Goede basis!
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mt-8">
+                    <h3 className="text-lg font-semibold text-emerald-800 mb-2">
+                      🎉 Goede basis!
                     </h3>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-700 font-light">
                       Je winkel heeft geen grote structurele problemen. Er is nog wel optimalisatiepotentieel van ongeveer {results.percentage}% door kleine verbeteringen in de flow en presentatie.
                     </p>
                   </div>
                 )}
 
-                <div className="flex justify-center pt-12">
+                <div className="flex justify-center pt-6">
                   <button
                     onClick={resetCalculator}
                     data-testid="reset-calculator-btn"
-                    className="px-12 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-200 font-bold uppercase tracking-wide"
+                    className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
                   >
                     Opnieuw berekenen
                   </button>
@@ -363,23 +322,17 @@ function App() {
             )}
 
             {!results && (
-              <div className="text-center py-20 border-2 border-dashed border-gray-300">
-                <div className="text-gray-400 text-6xl mb-4">📊</div>
-                <p className="text-gray-500 font-medium text-lg">
-                  Vul alle velden in om je resultaten te zien
-                </p>
+              <div className="text-center py-8 text-gray-400 font-light">
+                Vul alle velden in om je resultaten te zien
               </div>
             )}
           </div>
 
           {/* Footer */}
           <div className="text-center">
-            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border-2 border-gray-300">
-              <div className="w-2 h-2 bg-blue-600"></div>
-              <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">
-                Winkel Omzetanalyse Tool — Versie 2.0
-              </p>
-            </div>
+            <p className="text-gray-400 text-sm font-light">
+              Online Rekentool voor fysieke retail — Versie 2.0
+            </p>
           </div>
         </div>
       </div>
