@@ -111,41 +111,41 @@ function App() {
 
   return (
     <div className="App">
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-slate-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          {/* Premium Header */}
-          <div className="text-center mb-16 fade-in-up">
+          {/* Header */}
+          <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <div className="px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium tracking-wide">
+              <div className="px-4 py-1.5 bg-blue-600 text-white text-xs font-semibold tracking-widest uppercase">
                 RETAIL ANALYSE TOOL
               </div>
             </div>
-            <h1 className="text-5xl font-bold text-slate-900 mb-4 tracking-tight">
+            <h1 className="text-5xl font-bold text-gray-900 mb-4 tracking-tight">
               Winkel Omzetanalyse
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Ontdek het verborgen potentieel van uw fysieke winkel en krijg concrete verbeteradviezen
             </p>
           </div>
 
-          {/* Main Content Card with Glass Effect */}
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl shadow-slate-200/50 border border-white/60 p-10 sm:p-14 mb-10 fade-in-up">
+          {/* Main Content Card */}
+          <div className="bg-white border border-gray-200 p-12 sm:p-16 mb-10">
             {/* Input Section */}
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center text-white font-semibold shadow-lg shadow-indigo-500/30">
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
+                <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
                   1
                 </div>
-                <h2 className="text-3xl font-semibold text-slate-900">
+                <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-wide">
                   Basisgegevens
                 </h2>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                   <label
                     htmlFor="area"
-                    className="block text-sm font-semibold text-slate-700 mb-3"
+                    className="block text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide"
                   >
                     Winkeloppervlakte (m²)
                   </label>
@@ -155,7 +155,7 @@ function App() {
                     data-testid="area-input"
                     value={formData.area}
                     onChange={(e) => handleInputChange("area", e.target.value)}
-                    className="w-full px-5 py-4 rounded-xl border-2 border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all outline-none text-slate-900 text-lg font-medium bg-white shadow-sm"
+                    className="w-full px-4 py-3 border-2 border-gray-300 focus:border-blue-600 transition-all outline-none text-gray-900 text-lg font-medium bg-white"
                     placeholder="150"
                   />
                 </div>
@@ -163,7 +163,7 @@ function App() {
                 <div>
                   <label
                     htmlFor="weeklyRevenue"
-                    className="block text-sm font-semibold text-slate-700 mb-3"
+                    className="block text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide"
                   >
                     Gemiddelde omzet per week (€)
                   </label>
@@ -175,7 +175,7 @@ function App() {
                     onChange={(e) =>
                       handleInputChange("weeklyRevenue", e.target.value)
                     }
-                    className="w-full px-5 py-4 rounded-xl border-2 border-slate-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all outline-none text-slate-900 text-lg font-medium bg-white shadow-sm"
+                    className="w-full px-4 py-3 border-2 border-gray-300 focus:border-blue-600 transition-all outline-none text-gray-900 text-lg font-medium bg-white"
                     placeholder="5000"
                   />
                 </div>
@@ -183,26 +183,26 @@ function App() {
             </div>
 
             {/* Diagnosis Questions */}
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-600 rounded-xl flex items-center justify-center text-white font-semibold shadow-lg shadow-violet-500/30">
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
+                <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
                   2
                 </div>
-                <h2 className="text-3xl font-semibold text-slate-900">
+                <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-wide">
                   Diagnosevragen
                 </h2>
               </div>
-              <p className="text-slate-600 mb-8 text-base">
+              <p className="text-gray-600 mb-8 text-base">
                 Beantwoord onderstaande vragen eerlijk voor een accurate analyse.
               </p>
 
-              <div className="space-y-5">
+              <div className="space-y-4">
                 {questionsData.map((item, index) => (
                   <div
                     key={index}
-                    className="border-2 border-slate-200 rounded-2xl p-6 bg-gradient-to-br from-white to-slate-50/50 hover:border-slate-300 transition-all"
+                    className="border-2 border-gray-200 p-6 bg-white"
                   >
-                    <p className="text-slate-800 mb-4 font-medium text-base leading-relaxed">
+                    <p className="text-gray-900 mb-4 font-medium text-base leading-relaxed">
                       {index + 1}. {item.question}
                     </p>
                     <div className="flex gap-4">
@@ -211,10 +211,10 @@ function App() {
                           handleInputChange(`q${index + 1}`, true)
                         }
                         data-testid={`question-${index + 1}-yes-btn`}
-                        className={`flex-1 py-3 rounded-xl border-2 transition-all duration-200 font-semibold text-base shadow-sm ${
+                        className={`flex-1 py-3 border-2 transition-all duration-200 font-semibold text-base ${
                           formData[`q${index + 1}`] === true
-                            ? "bg-gradient-to-br from-rose-500 to-rose-600 text-white border-rose-500 shadow-lg shadow-rose-500/30 scale-[1.02]"
-                            : "bg-white text-slate-700 border-slate-200 hover:border-rose-300 hover:shadow-md"
+                            ? "bg-blue-600 text-white border-blue-600"
+                            : "bg-white text-gray-900 border-gray-300 hover:border-gray-400"
                         }`}
                       >
                         Ja
@@ -224,10 +224,10 @@ function App() {
                           handleInputChange(`q${index + 1}`, false)
                         }
                         data-testid={`question-${index + 1}-no-btn`}
-                        className={`flex-1 py-3 rounded-xl border-2 transition-all duration-200 font-semibold text-base shadow-sm ${
+                        className={`flex-1 py-3 border-2 transition-all duration-200 font-semibold text-base ${
                           formData[`q${index + 1}`] === false
-                            ? "bg-gradient-to-br from-emerald-500 to-emerald-600 text-white border-emerald-500 shadow-lg shadow-emerald-500/30 scale-[1.02]"
-                            : "bg-white text-slate-700 border-slate-200 hover:border-slate-300 hover:shadow-md"
+                            ? "bg-gray-900 text-white border-gray-900"
+                            : "bg-white text-gray-900 border-gray-300 hover:border-gray-400"
                         }`}
                       >
                         Nee
@@ -240,32 +240,32 @@ function App() {
 
             {/* Results Section */}
             {results && (
-              <div className="space-y-10 pt-12 border-t-2 border-slate-200">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center text-white font-semibold shadow-lg shadow-emerald-500/30">
+              <div className="space-y-12 pt-16 border-t-2 border-gray-900">
+                <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-gray-900">
+                  <div className="w-8 h-8 bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
                     3
                   </div>
-                  <h2 className="text-3xl font-semibold text-slate-900">
+                  <h2 className="text-2xl font-bold text-gray-900 uppercase tracking-wide">
                     Uw Resultaten
                   </h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Block A - Current Situation */}
-                  <div className="bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl p-8 border-2 border-slate-200 shadow-sm" data-testid="results-block-a">
-                    <div className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-4">
-                      📊 Huidige situatie
+                  <div className="bg-gray-50 border-2 border-gray-300 p-8" data-testid="results-block-a">
+                    <div className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-6">
+                      Huidige situatie
                     </div>
                     <div className="space-y-4">
                       <div>
-                        <div className="text-sm text-slate-600 mb-1">Jaaromzet</div>
-                        <div className="text-3xl font-bold text-slate-900" data-testid="yearly-revenue">
+                        <div className="text-sm text-gray-600 mb-1 font-medium">Jaaromzet</div>
+                        <div className="text-3xl font-bold text-gray-900" data-testid="yearly-revenue">
                           {formatCurrency(results.yearlyRevenue)}
                         </div>
                       </div>
                       <div>
-                        <div className="text-sm text-slate-600 mb-1">Omzet per m²</div>
-                        <div className="text-2xl font-semibold text-slate-700" data-testid="revenue-per-m2">
+                        <div className="text-sm text-gray-600 mb-1 font-medium">Omzet per m²</div>
+                        <div className="text-2xl font-semibold text-gray-900" data-testid="revenue-per-m2">
                           {formatCurrency(results.revenuePerM2)}
                         </div>
                       </div>
@@ -273,29 +273,29 @@ function App() {
                   </div>
 
                   {/* Block B - Untapped Revenue */}
-                  <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-2xl p-8 border-2 border-amber-200 shadow-sm" data-testid="results-block-b">
-                    <div className="text-sm font-semibold text-amber-600 uppercase tracking-wider mb-4">
-                      ⚠️ Structureel onbenut
+                  <div className="bg-blue-50 border-2 border-blue-600 p-8" data-testid="results-block-b">
+                    <div className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-6">
+                      Structureel onbenut
                     </div>
                     <div>
-                      <div className="text-sm text-amber-700 mb-2">Bedrag dat blijft liggen</div>
-                      <div className="text-4xl font-bold text-amber-900 mb-3" data-testid="untapped-revenue">
+                      <div className="text-sm text-gray-700 mb-2 font-medium">Bedrag dat blijft liggen</div>
+                      <div className="text-4xl font-bold text-blue-600 mb-3" data-testid="untapped-revenue">
                         {formatCurrency(results.untappedRevenue)}
                       </div>
-                      <div className="text-xs text-amber-800 italic bg-white/60 px-3 py-2 rounded-lg">
+                      <div className="text-xs text-gray-700 bg-white px-3 py-2 border border-blue-200">
                         ≈ {results.percentage}% van huidige omzet
                       </div>
                     </div>
                   </div>
 
                   {/* Block C - After Optimization */}
-                  <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-2xl p-8 border-2 border-emerald-200 shadow-sm" data-testid="results-block-c">
-                    <div className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-4">
-                      ✨ Na optimalisatie
+                  <div className="bg-gray-900 border-2 border-gray-900 p-8" data-testid="results-block-c">
+                    <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">
+                      Na optimalisatie
                     </div>
                     <div>
-                      <div className="text-sm text-emerald-700 mb-2">Potentiële jaaromzet</div>
-                      <div className="text-4xl font-bold text-emerald-900" data-testid="potential-revenue">
+                      <div className="text-sm text-gray-300 mb-2 font-medium">Potentiële jaaromzet</div>
+                      <div className="text-4xl font-bold text-white" data-testid="potential-revenue">
                         {formatCurrency(results.potentialRevenue)}
                       </div>
                     </div>
@@ -304,36 +304,32 @@ function App() {
 
                 {/* Problems & Solutions */}
                 {results.identifiedProblems.length > 0 && (
-                  <div className="mt-12">
-                    <h3 className="text-2xl font-semibold text-slate-900 mb-8 flex items-center gap-3">
-                      <span className="text-3xl">🔍</span>
+                  <div className="mt-16">
+                    <h3 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wide border-b-2 border-gray-900 pb-4">
                       Waarom blijft dit geld liggen?
                     </h3>
-                    <div className="space-y-6">
+                    <div className="space-y-8">
                       {results.identifiedProblems.map((problem, index) => (
-                        <div key={index} className="bg-gradient-to-br from-rose-50 to-rose-100/30 border-2 border-rose-200 rounded-2xl p-8 shadow-sm">
+                        <div key={index} className="border-2 border-gray-300 p-8 bg-white">
                           <div className="flex items-start gap-4 mb-6">
-                            <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-br from-rose-500 to-rose-600 text-white rounded-xl flex items-center justify-center font-bold shadow-lg shadow-rose-500/30">
+                            <div className="flex-shrink-0 w-10 h-10 bg-blue-600 text-white flex items-center justify-center font-bold text-lg">
                               {index + 1}
                             </div>
                             <div className="flex-1">
-                              <h4 className="font-semibold text-slate-900 mb-2 text-lg">
+                              <h4 className="font-bold text-gray-900 mb-2 text-lg uppercase tracking-wide">
                                 {problem.problem}
                               </h4>
-                              <p className="text-sm text-slate-600 italic">
+                              <p className="text-sm text-gray-600 italic">
                                 "{problem.question}"
                               </p>
                             </div>
                           </div>
                           
-                          <div className="bg-white rounded-xl p-6 border-l-4 border-emerald-500 shadow-sm">
-                            <div className="flex items-start gap-2 mb-3">
-                              <span className="text-xl">💡</span>
-                              <h5 className="text-sm font-semibold text-emerald-700 uppercase tracking-wide">
-                                Wat moet je verbeteren:
-                              </h5>
-                            </div>
-                            <p className="text-slate-700 leading-relaxed">
+                          <div className="bg-gray-50 border-l-4 border-blue-600 p-6">
+                            <h5 className="text-xs font-bold text-gray-900 uppercase tracking-widest mb-3">
+                              Wat moet je verbeteren:
+                            </h5>
+                            <p className="text-gray-900 leading-relaxed">
                               {problem.solution}
                             </p>
                           </div>
@@ -344,22 +340,21 @@ function App() {
                 )}
 
                 {results.identifiedProblems.length === 0 && (
-                  <div className="bg-gradient-to-br from-emerald-50 to-emerald-100/30 border-2 border-emerald-200 rounded-2xl p-8 mt-10 shadow-sm">
-                    <h3 className="text-xl font-semibold text-emerald-900 mb-3 flex items-center gap-2">
-                      <span className="text-2xl">🎉</span>
+                  <div className="bg-gray-900 border-2 border-gray-900 p-8 mt-10 text-white">
+                    <h3 className="text-xl font-bold mb-3 uppercase tracking-wide">
                       Goede basis!
                     </h3>
-                    <p className="text-slate-700 leading-relaxed">
+                    <p className="text-gray-300 leading-relaxed">
                       Je winkel heeft geen grote structurele problemen. Er is nog wel optimalisatiepotentieel van ongeveer {results.percentage}% door kleine verbeteringen in de flow en presentatie.
                     </p>
                   </div>
                 )}
 
-                <div className="flex justify-center pt-10">
+                <div className="flex justify-center pt-12">
                   <button
                     onClick={resetCalculator}
                     data-testid="reset-calculator-btn"
-                    className="px-10 py-4 bg-gradient-to-br from-slate-700 to-slate-800 text-white rounded-xl hover:from-slate-800 hover:to-slate-900 transition-all duration-200 font-semibold shadow-xl shadow-slate-900/20 hover:shadow-2xl hover:shadow-slate-900/30 hover:scale-[1.02]"
+                    className="px-12 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-200 font-bold uppercase tracking-wide"
                   >
                     Opnieuw berekenen
                   </button>
@@ -368,20 +363,20 @@ function App() {
             )}
 
             {!results && (
-              <div className="text-center py-16 bg-gradient-to-br from-slate-50 to-slate-100/50 rounded-2xl border-2 border-dashed border-slate-300">
-                <div className="text-slate-400 text-6xl mb-4">📊</div>
-                <p className="text-slate-500 font-medium text-lg">
+              <div className="text-center py-20 border-2 border-dashed border-gray-300">
+                <div className="text-gray-400 text-6xl mb-4">📊</div>
+                <p className="text-gray-500 font-medium text-lg">
                   Vul alle velden in om je resultaten te zien
                 </p>
               </div>
             )}
           </div>
 
-          {/* Premium Footer */}
+          {/* Footer */}
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-5 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-slate-200/60 shadow-sm">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-              <p className="text-slate-600 text-sm font-medium">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-white border-2 border-gray-300">
+              <div className="w-2 h-2 bg-blue-600"></div>
+              <p className="text-gray-600 text-sm font-medium uppercase tracking-wide">
                 Winkel Omzetanalyse Tool — Versie 2.0
               </p>
             </div>
