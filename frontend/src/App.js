@@ -337,7 +337,7 @@ function App() {
           {/* Footer */}
           <div className="text-center">
             <p className="text-gray-400 text-sm font-light">
-              Online Rekentool voor fysieke retail — Versie 2.0
+              OG8 — Versie 1.0
             </p>
           </div>
         </div>
