@@ -162,25 +162,27 @@ function App() {
 
             {/* Diagnosis Questions */}
             <div className="mb-10">
-              <h2 className="text-2xl font-light text-gray-800 mb-6">Diagnosevragen</h2>
-              <p className="text-gray-600 mb-6 font-light">
+              <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
+                <h2 className="text-2xl font-bold text-gray-800">Diagnosevragen</h2>
+              </div>
+              <p className="text-gray-600 mb-6 text-base">
                 Beantwoord onderstaande vragen eerlijk voor een accurate analyse.
               </p>
 
               <div className="space-y-4">
                 {questionsData.map((item, index) => (
                   <div key={index} className="border border-gray-200 rounded-xl p-5 bg-white">
-                    <p className="text-gray-700 mb-3 font-normal">
+                    <p className="text-gray-700 mb-3 text-base">
                       {index + 1}. {item.question}
                     </p>
                     <div className="flex space-x-3">
                       <button
                         onClick={() => handleInputChange(`q${index + 1}`, true)}
                         data-testid={`question-${index + 1}-yes-btn`}
-                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-medium ${
+                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
                           formData[`q${index + 1}`] === true
-                            ? "bg-pink-500 text-white"
-                            : "bg-white text-gray-700 border border-gray-300 hover:border-pink-300"
+                            ? "bg-orange-500 text-white"
+                            : "bg-white text-gray-700 border border-gray-300 hover:border-orange-300"
                         }`}
                       >
                         Ja
@@ -188,7 +190,7 @@ function App() {
                       <button
                         onClick={() => handleInputChange(`q${index + 1}`, false)}
                         data-testid={`question-${index + 1}-no-btn`}
-                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-medium ${
+                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
                           formData[`q${index + 1}`] === false
                             ? "bg-gray-700 text-white"
                             : "bg-white text-gray-700 border border-gray-300 hover:border-gray-400"
