@@ -125,7 +125,9 @@ function App() {
           <div className="bg-white rounded-2xl shadow-md p-10 mb-8">
             {/* Input Section */}
             <div className="mb-10">
-              <h2 className="text-2xl font-light text-gray-800 mb-6">Basisgegevens</h2>
+              <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
+                <h2 className="text-2xl font-bold text-gray-800">Basisgegevens</h2>
+              </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
