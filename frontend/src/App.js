@@ -306,10 +306,10 @@ function App() {
 
                 {results.identifiedProblems.length === 0 && (
                   <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mt-8">
-                    <h3 className="text-lg font-semibold text-emerald-800 mb-2">
+                    <h3 className="text-lg font-bold text-emerald-800 mb-2">
                       🎉 Goede basis!
                     </h3>
-                    <p className="text-gray-700 font-light">
+                    <p className="text-base text-gray-700">
                       Je winkel heeft geen grote structurele problemen. Er is nog wel optimalisatiepotentieel van ongeveer {results.percentage}% door kleine verbeteringen in de flow en presentatie.
                     </p>
                   </div>
@@ -319,7 +319,7 @@ function App() {
                   <button
                     onClick={resetCalculator}
                     data-testid="reset-calculator-btn"
-                    className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                    className="px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-200 font-semibold shadow-sm hover:shadow-md text-base"
                   >
                     Opnieuw berekenen
                   </button>
@@ -328,7 +328,7 @@ function App() {
             )}
 
             {!results && (
-              <div className="text-center py-8 text-gray-400 font-light">
+              <div className="text-center py-8 text-gray-400 text-base">
                 Vul alle velden in om je resultaten te zien
               </div>
             )}
