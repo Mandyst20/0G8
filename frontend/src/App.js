@@ -207,25 +207,25 @@ function App() {
             {/* Results Section */}
             {results && (
               <div className="space-y-8 pt-8 border-t border-gray-200">
-                <div>
-                  <h2 className="text-2xl font-light text-gray-800 mb-6">Jouw Resultaten</h2>
+                <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 rounded-lg">
+                  <h2 className="text-2xl font-bold text-gray-800">Jouw Resultaten</h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Block A - Current Situation */}
                   <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm" data-testid="results-block-a">
-                    <h3 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                    <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
                       📊 Huidige situatie
                     </h3>
                     <div className="space-y-3">
                       <div>
-                        <div className="text-sm text-gray-600 mb-1">Jaaromzet:</div>
+                        <div className="text-base text-gray-600 mb-1">Jaaromzet:</div>
                         <div className="text-2xl font-semibold text-gray-800" data-testid="yearly-revenue">
                           {formatCurrency(results.yearlyRevenue)}
                         </div>
                       </div>
                       <div>
-                        <div className="text-sm text-gray-600 mb-1">Omzet per m² per jaar:</div>
+                        <div className="text-base text-gray-600 mb-1">Omzet per m² per jaar:</div>
                         <div className="text-xl font-medium text-gray-700" data-testid="revenue-per-m2">
                           {formatCurrency(results.revenuePerM2)}
                         </div>
@@ -235,15 +235,15 @@ function App() {
 
                   {/* Block B - Untapped Revenue */}
                   <div className="bg-amber-50 rounded-xl border border-amber-200 p-6 shadow-sm" data-testid="results-block-b">
-                    <h3 className="text-xs font-semibold text-amber-600 uppercase tracking-wider mb-4">
+                    <h3 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-4">
                       ⚠️ Structureel onbenut
                     </h3>
                     <div>
-                      <div className="text-sm text-gray-700 mb-2">Bedrag dat jaarlijks blijft liggen:</div>
+                      <div className="text-base text-gray-700 mb-2">Bedrag dat jaarlijks blijft liggen:</div>
                       <div className="text-3xl font-bold text-amber-600 mb-3" data-testid="untapped-revenue">
                         {formatCurrency(results.untappedRevenue)}
                       </div>
-                      <div className="text-xs text-gray-600 italic bg-white px-3 py-2 rounded-lg">
+                      <div className="text-sm text-gray-600 bg-white px-3 py-2 rounded-lg">
                         Dit is ongeveer {results.percentage}% van je huidige omzet die je misloopt door onderstaande problemen.
                       </div>
                     </div>
@@ -251,11 +251,11 @@ function App() {
 
                   {/* Block C - After Optimization */}
                   <div className="bg-emerald-50 rounded-xl border border-emerald-200 p-6 shadow-sm" data-testid="results-block-c">
-                    <h3 className="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-4">
+                    <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-4">
                       ✨ Na optimalisatie
                     </h3>
                     <div>
-                      <div className="text-sm text-gray-700 mb-2">Potentiële jaaromzet na verbetering:</div>
+                      <div className="text-base text-gray-700 mb-2">Potentiële jaaromzet na verbetering:</div>
                       <div className="text-3xl font-bold text-emerald-600" data-testid="potential-revenue">
                         {formatCurrency(results.potentialRevenue)}
                       </div>
