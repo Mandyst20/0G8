@@ -298,7 +298,7 @@ function App() {
                     <h3 className="text-xl font-medium text-slate-800 mb-6">
                       🔍 Waarom blijft dit geld liggen?
                     </h3>
-                    <div className="space-y-8">
+                    <div className="space-y-6">
                       {results.identifiedProblems.map((problem, index) => (
                         <div key={index} className="bg-red-50 border border-red-200 rounded-lg p-6">
                           <div className="flex items-start space-x-3 mb-4">
@@ -306,7 +306,7 @@ function App() {
                               {index + 1}
                             </div>
                             <div className="flex-1">
-                              <h4 className="font-medium text-slate-800 mb-2 text-lg">
+                              <h4 className="font-medium text-slate-800 mb-2">
                                 Probleem: {problem.problem}
                               </h4>
                               <p className="text-sm text-slate-600 italic mb-3">
@@ -315,38 +315,13 @@ function App() {
                             </div>
                           </div>
                           
-                          <div className="bg-white rounded-lg p-5 border-l-4 border-emerald-500 mb-4">
+                          <div className="bg-white rounded-lg p-4 border-l-4 border-emerald-500">
                             <h5 className="text-sm font-medium text-emerald-700 mb-2">
-                              💡 Korte samenvatting:
+                              💡 Wat moet je verbeteren:
                             </h5>
                             <p className="text-sm text-slate-700">
                               {problem.solution}
                             </p>
-                          </div>
-
-                          {/* Detailed Tips */}
-                          <div className="space-y-4">
-                            <h5 className="text-sm font-semibold text-slate-800 uppercase tracking-wide">
-                              📋 Gedetailleerde Optimalisatietips:
-                            </h5>
-                            {problem.detailedTips.map((tipSection, tipIndex) => (
-                              <div key={tipIndex} className="bg-white rounded-lg p-5 border border-slate-200">
-                                <h6 className="font-medium text-slate-800 mb-3 flex items-center">
-                                  <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold mr-2">
-                                    {tipIndex + 1}
-                                  </span>
-                                  {tipSection.title}
-                                </h6>
-                                <ul className="space-y-2">
-                                  {tipSection.tips.map((tip, tipItemIndex) => (
-                                    <li key={tipItemIndex} className="flex items-start text-sm text-slate-700">
-                                      <span className="text-emerald-500 mr-2 mt-1 flex-shrink-0">▸</span>
-                                      <span>{tip}</span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </div>
-                            ))}
                           </div>
                         </div>
                       ))}
