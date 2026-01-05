@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List
 import uuid
 from datetime import datetime, timezone
-
+from contextlib import asynccontextmanager
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -19,8 +19,16 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# Create the main app without a prefix
-app = FastAPI()
+# Lifespan context manager for startup and shutdown events
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Startup: nothing specific needed for MongoDB client
+    yield
+    # Shutdown: close the MongoDB client connection
+    client.close()
+
+# Create the main app with lifespan
+app = FastAPI(lifespan=lifespan)
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
@@ -29,7 +37,6 @@ api_router = APIRouter(prefix="/api")
 @app.get("/health")
 async def health_check():
     return {"status": "healthy", "service": "og8-backend"}
-
 
 # Define Models
 class StatusCheck(BaseModel):
@@ -88,7 +95,3 @@ logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
