@@ -114,7 +114,7 @@ function App() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-light text-gray-800 mb-3">
-              Online Rekentool
+              OG8
             </h1>
             <p className="text-gray-600 text-lg font-light">
               Ontdek het potentieel van uw winkel
