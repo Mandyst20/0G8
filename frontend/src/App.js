@@ -225,47 +225,71 @@ function App() {
               </div>
             </div>
 
-            {/* Diagnosis Questions */}
+            {/* Omzet-analyse / Inzichtscan */}
             <div className="mb-10">
               <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
-                <h2 className="text-2xl font-bold text-gray-800">Diagnosevragen</h2>
+                <h2 className="text-2xl font-bold text-gray-800">Inzichtscan</h2>
               </div>
               <p className="text-gray-600 mb-6 text-base">
                 Beantwoord onderstaande vragen eerlijk voor een accurate analyse.
               </p>
 
-              <div className="space-y-4">
-                {questionsData.map((item, index) => (
-                  <div key={index} className="border border-gray-200 rounded-xl p-5 bg-white">
-                    <p className="text-gray-700 mb-3 text-base">
-                      {index + 1}. {item.question}
-                    </p>
-                    <div className="flex space-x-3">
-                      <button
-                        onClick={() => handleInputChange(`q${index + 1}`, true)}
-                        data-testid={`question-${index + 1}-yes-btn`}
-                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
-                          formData[`q${index + 1}`] === true
-                            ? "bg-orange-500 text-white"
-                            : "bg-white text-gray-700 border border-gray-300 hover:border-orange-300"
-                        }`}
-                      >
-                        Ja
-                      </button>
-                      <button
-                        onClick={() => handleInputChange(`q${index + 1}`, false)}
-                        data-testid={`question-${index + 1}-no-btn`}
-                        className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
-                          formData[`q${index + 1}`] === false
-                            ? "bg-gray-700 text-white"
-                            : "bg-white text-gray-700 border border-gray-300 hover:border-gray-400"
-                        }`}
-                      >
-                        Nee
-                      </button>
+              <div className="space-y-6">
+                {questionsData.map((item, index) => {
+                  const categoryColors = {
+                    yellow: "bg-yellow-50 border-yellow-300",
+                    red: "bg-red-50 border-red-300",
+                    green: "bg-green-50 border-green-300"
+                  };
+                  const categoryEmojis = {
+                    yellow: "🟡",
+                    red: "🔴",
+                    green: "🟢"
+                  };
+
+                  return (
+                    <div key={index}>
+                      {/* Show category header only for first question of each category */}
+                      {(index === 0 || questionsData[index].category !== questionsData[index - 1].category) && (
+                        <div className="mb-3">
+                          <h3 className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+                            {categoryEmojis[item.categoryColor]} Categorie {item.category} – {item.categoryName}
+                          </h3>
+                        </div>
+                      )}
+                      
+                      <div className={`border-2 rounded-xl p-5 ${categoryColors[item.categoryColor]}`}>
+                        <p className="text-gray-800 mb-3 text-base font-medium">
+                          {index + 1}. {item.question}
+                        </p>
+                        <div className="flex space-x-3">
+                          <button
+                            onClick={() => handleInputChange(`q${index + 1}`, true)}
+                            data-testid={`question-${index + 1}-waar-btn`}
+                            className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
+                              formData[`q${index + 1}`] === true
+                                ? "bg-emerald-500 text-white"
+                                : "bg-white text-gray-700 border border-gray-300 hover:border-emerald-300"
+                            }`}
+                          >
+                            Waar
+                          </button>
+                          <button
+                            onClick={() => handleInputChange(`q${index + 1}`, false)}
+                            data-testid={`question-${index + 1}-niet-waar-btn`}
+                            className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
+                              formData[`q${index + 1}`] === false
+                                ? "bg-orange-500 text-white"
+                                : "bg-white text-gray-700 border border-gray-300 hover:border-orange-300"
+                            }`}
+                          >
+                            Niet waar
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 
