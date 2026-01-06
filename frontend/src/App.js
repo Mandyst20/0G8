@@ -13,25 +13,76 @@ function App() {
   const [results, setResults] = useState(null);
 
   const questionsData = [
+    // Categorie A - Structuur & keuzes (🟡 Geel)
     {
-      question: "Klanten lopen regelmatig een ronde zonder iets te kopen.",
-      problem: "Onduidelijke winkelroute en productpresentatie",
-      solution: "Creëer een logische looproute met duidelijke zones en signage. Plaats populaire producten strategisch verspreid om klanten door de hele winkel te leiden."
+      category: "A",
+      categoryName: "Structuur & keuzes",
+      categoryColor: "yellow",
+      question: "De winkelindeling is de afgelopen 12 maanden aangepast op basis van concreet klantgedrag en niet op gevoel of esthetiek.",
+      linkedBlock: null
     },
     {
-      question: "Ik moet klanten vaak uitleggen waar ze moeten beginnen of wat het verschil is tussen producten.",
-      problem: "Gebrek aan heldere communicatie en productinformatie",
-      solution: "Verbeter signage en productetiketten. Gebruik informatieborden, QR-codes of digitale schermen om productinformatie duidelijk te maken. Train personeel in proactieve klantenservice."
+      category: "A",
+      categoryName: "Structuur & keuzes",
+      categoryColor: "yellow",
+      question: "Bestverkopende producten zijn strategisch geplaatst om klanten door te leiden naar een volgende aankoop (bijvoorbeeld combinaties, upgrades of aanvullingen).",
+      linkedBlock: null
     },
     {
-      question: "Producten die goed verkopen staan verspreid door de winkel.",
-      problem: "Suboptimale productplaatsing en merchandising",
-      solution: "Analyseer verkoopdata en hergroepeer producten logisch. Creëer thematische zones of productcombinaties die natuurlijk bij elkaar horen. Plaats bestsellers op strategische plekken."
+      category: "A",
+      categoryName: "Structuur & keuzes",
+      categoryColor: "yellow",
+      question: "Bij het inrichten van de winkel is expliciet nagedacht over waar klanten stoppen, twijfelen of afhaken en neemt keuzestress weg.",
+      linkedBlock: null
+    },
+    // Categorie B - Volwassenheid / smart retail (🔴 Rood)
+    {
+      category: "B",
+      categoryName: "Volwassenheid / smart retail",
+      categoryColor: "red",
+      question: "De winkel is ingericht op piekmomenten (drukte), niet alleen op rustige momenten of ideale klantflow.",
+      linkedBlock: null
     },
     {
-      question: "Tijdens drukte wordt het snel onrustig en haken klanten af.",
-      problem: "Inadequate ruimte-indeling en crowd management",
-      solution: "Verbreed gangpaden, verminder obstakels en creëer meerdere kassa-opties. Implementeer een wachtrij-managementsysteem en zorg voor voldoende personeel tijdens piekuren."
+      category: "B",
+      categoryName: "Volwassenheid / smart retail",
+      categoryColor: "red",
+      question: "Klanten kunnen zelfstandig tot aankoop komen zonder uitleg van personeel, doordat keuzes vooraf zijn vereenvoudigd.",
+      linkedBlock: 2, // BLOK 2
+      problem: "De winkel leunt te veel op uitleg van jou of je team",
+      problemDescription: "Klanten vragen waar wat ligt, wat het verschil is, of wat ze nodig hebben.",
+      explanation: "Als klanten pas kunnen kiezen nadat jij iets hebt uitgelegd, dan ligt de druk volledig bij jou en je team. En dat is niet vol te houden zonder omzet te verliezen. Op rustige momenten lukt dat nog. Tijdens drukte niet. En precies dan lopen de meeste aankopen weg.\n\nVeel klanten durven geen vragen te stellen. Die lopen dan liever door of vertrekken.",
+      solution: "We vertalen veelgestelde vragen en twijfelpunten naar vaste keuzestructuren in de winkel, zodat beslissingen minder afhankelijk zijn van uitleg."
+    },
+    {
+      category: "B",
+      categoryName: "Volwassenheid / smart retail",
+      categoryColor: "red",
+      question: "De winkel 'stuurt' klanten actief richting beslissingen, in plaats van reactief te wachten tot klanten vragen stellen.",
+      linkedBlock: null
+    },
+    // Categorie C - Herkenning (🟢 Groen)
+    {
+      category: "C",
+      categoryName: "Herkenning",
+      categoryColor: "green",
+      question: "Meer dan 30% van de klanten verlaat de winkel zonder aankoop.",
+      linkedBlock: 3, // BLOK 3
+      problem: "Drukte in de winkel vertaalt zich onvoldoende naar extra verkopen",
+      problemDescription: "Op piekmomenten blijven klanten korter, twijfelen meer en rekenen minder af.",
+      explanation: "Klanten vertrekken zelden omdat het aanbod niet klopt. Ze vertrekken omdat het net te veel moeite kost om tot een keuze te komen.\n\nDat voelt voor hen niet als een bewuste beslissing. Het gebeurt automatisch. Het brein kiest altijd de makkelijkste optie als iets voor hen onduidelijk is. En dat wordt dan: niets doen en weer naar buiten.\n\nDat is geen marketingprobleem en ook geen prijsprobleem. Het is een signaal dat beslissingen te veel bij de klant zelf worden neergelegd.",
+      solution: "We brengen structuur en volgorde aan in het koopproces, waardoor afronden logischer voelt dan vertrekken."
+    },
+    {
+      category: "C",
+      categoryName: "Herkenning",
+      categoryColor: "green",
+      question: "Klanten maken regelmatig een volledige ronde door de winkel zonder zichtbaar richting een beslissing te bewegen.",
+      linkedBlock: 1, // BLOK 1
+      problem: "Beslissing komt niet op gang",
+      problemDescription: "Klanten lopen een ronde, kijken, twijfelen en vertrekken zonder iets mee te nemen.",
+      explanation: "Als klanten een hele ronde maken zonder echt ergens te blijven hangen, is dat meestal geen interesseprobleem. Het is een keuzestressprobleem.\n\nVeel ondernemers denken: ze willen gewoon even kijken. In de praktijk betekent het vaak: ze weten niet waar ze moeten stoppen om te beslissen.\n\nVroeger namen mensen daar de tijd voor. Nu niet meer. Als een winkel niet helpt bij dat beslismoment, loopt iemand letterlijk weer naar buiten zonder dat hij doorheeft waarom.",
+      solution: "We analyseren het gedrag in de winkel en ontwerpen op basis daarvan smartzones die het koopproces optimaliseren."
     }
   ];
 
