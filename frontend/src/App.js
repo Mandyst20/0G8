@@ -101,7 +101,11 @@ function App() {
       formData.q1 !== null &&
       formData.q2 !== null &&
       formData.q3 !== null &&
-      formData.q4 !== null
+      formData.q4 !== null &&
+      formData.q5 !== null &&
+      formData.q6 !== null &&
+      formData.q7 !== null &&
+      formData.q8 !== null
     ) {
       calculateResults();
     } else {
