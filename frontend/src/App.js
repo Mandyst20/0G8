@@ -365,25 +365,33 @@ function App() {
                       {results.identifiedProblems.map((problem, index) => (
                         <div key={index} className="bg-orange-50 border border-orange-200 rounded-xl p-6 shadow-sm">
                           <div className="flex items-start space-x-3 mb-4">
-                            <div className="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                              {index + 1}
+                            <div className="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-base">
+                              {problem.linkedBlock}
                             </div>
                             <div className="flex-1">
-                              <h4 className="font-bold text-gray-800 mb-2 text-base">
+                              <h4 className="font-bold text-gray-900 mb-2 text-lg">
                                 Probleem: {problem.problem}
                               </h4>
-                              <p className="text-base text-gray-600 italic">
-                                "{problem.question}"
+                              <p className="text-base text-gray-700 italic mb-2">
+                                "{problem.problemDescription}"
                               </p>
                             </div>
                           </div>
                           
-                          <div className="bg-white rounded-lg p-5 border-l-4 border-yellow-400">
-                            <h5 className="text-sm font-bold text-gray-700 uppercase tracking-wider mb-2 flex items-center gap-1">
-                              <span className="text-base">💡</span>
-                              Wat moet je verbeteren:
+                          <div className="bg-white rounded-lg p-5 border-l-4 border-yellow-400 mb-4">
+                            <h5 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">
+                              Hier lekt omzet weg:
                             </h5>
-                            <p className="text-base text-gray-700 leading-relaxed">
+                            <p className="text-base text-gray-700 leading-relaxed whitespace-pre-line">
+                              {problem.explanation}
+                            </p>
+                          </div>
+
+                          <div className="bg-emerald-50 rounded-lg p-5 border-l-4 border-emerald-500">
+                            <h5 className="text-sm font-bold text-emerald-700 uppercase tracking-wider mb-3">
+                              💡 Oplossing:
+                            </h5>
+                            <p className="text-base text-gray-800 leading-relaxed">
                               {problem.solution}
                             </p>
                           </div>
