@@ -332,8 +332,8 @@ function App() {
                       <div className="text-3xl font-bold text-amber-600 mb-3" data-testid="untapped-revenue">
                         {formatCurrency(results.untappedRevenue)}
                       </div>
-                      <div className="text-sm text-gray-600 bg-white px-3 py-2 rounded-lg">
-                        Dit is ongeveer {results.percentage}% van je huidige omzet die je misloopt door onderstaande problemen.
+                      <div className="text-sm text-gray-700 bg-white px-3 py-2 rounded-lg leading-relaxed">
+                        Op basis van jouw antwoorden en benchmarks uit retailonderzoek blijft momenteel circa {results.percentage}% van je omzet onbenut binnen de huidige winkelopzet.
                       </div>
                     </div>
                   </div>
