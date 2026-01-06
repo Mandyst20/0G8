@@ -106,13 +106,13 @@ function App() {
   }, [formData]);
 
   const calculateResults = () => {
-    const answers = [formData.q1, formData.q2, formData.q3, formData.q4];
-    const yesCount = answers.filter((answer) => answer === true).length;
+    const answers = [formData.q1, formData.q2, formData.q3, formData.q4, formData.q5, formData.q6, formData.q7, formData.q8];
+    const nietWaarCount = answers.filter((answer) => answer === false).length;
 
     let percentage = 0;
-    if (yesCount <= 1) percentage = 10;
-    else if (yesCount <= 3) percentage = 20;
-    else percentage = 30;
+    if (nietWaarCount <= 2) percentage = 10;
+    else if (nietWaarCount <= 5) percentage = 15;
+    else percentage = 20;
 
     const weeklyRevenue = parseFloat(formData.weeklyRevenue);
     const area = parseFloat(formData.area);
@@ -122,8 +122,9 @@ function App() {
     const untappedRevenue = yearlyRevenue * (percentage / 100);
     const potentialRevenue = yearlyRevenue + untappedRevenue;
 
+    // Get identified problems - only for questions with linkedBlock
     const identifiedProblems = answers.map((answer, index) => ({
-      hasIssue: answer === true,
+      hasIssue: answer === false && questionsData[index].linkedBlock !== null,
       ...questionsData[index]
     })).filter(item => item.hasIssue);
 
@@ -133,6 +134,7 @@ function App() {
       untappedRevenue,
       potentialRevenue,
       percentage,
+      nietWaarCount,
       identifiedProblems
     });
   };
