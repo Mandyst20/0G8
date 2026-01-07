@@ -553,7 +553,7 @@ function App() {
                           <button
                             onClick={() => handleInputChange(`q${index + 1}`, true)}
                             data-testid={`question-${index + 1}-waar-btn`}
-                            className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
+                            className={`flex-1 py-2.5 rounded-md transition-all duration-200 font-semibold text-base ${
                               formData[`q${index + 1}`] === true
                                 ? "bg-emerald-500 text-white"
                                 : "bg-white text-gray-700 border border-gray-300 hover:border-emerald-300"
@@ -564,7 +564,7 @@ function App() {
                           <button
                             onClick={() => handleInputChange(`q${index + 1}`, false)}
                             data-testid={`question-${index + 1}-niet-waar-btn`}
-                            className={`flex-1 py-2.5 rounded-lg transition-all duration-200 font-semibold text-base ${
+                            className={`flex-1 py-2.5 rounded-md transition-all duration-200 font-semibold text-base ${
                               formData[`q${index + 1}`] === false
                                 ? "bg-orange-500 text-white"
                                 : "bg-white text-gray-700 border border-gray-300 hover:border-orange-300"
