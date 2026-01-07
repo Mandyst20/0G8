@@ -418,8 +418,8 @@ function App() {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="relative mb-12 overflow-hidden">
-            {/* Gradient Background */}
-            <div className="bg-gradient-to-br from-blue-600 via-blue-500 to-indigo-600 rounded-2xl shadow-xl p-12 text-center">
+            {/* Gradient Background - Fris Groen → Turquoise → Blauw */}
+            <div className="bg-gradient-to-br from-emerald-500 via-cyan-500 to-blue-600 rounded-2xl shadow-xl p-12 text-center">
               {/* Decorative circles */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
@@ -429,10 +429,10 @@ function App() {
                 <h1 className="text-6xl font-bold text-white mb-3 tracking-tight" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif"}}>
                   OG8
                 </h1>
-                <p className="text-xl text-blue-100 font-light mb-2" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif"}}>
+                <p className="text-xl text-white/90 font-light mb-2" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif"}}>
                   Ontdek het potentieel van uw winkel
                 </p>
-                <div className="mt-4 pt-4 border-t border-blue-400/30">
+                <div className="mt-4 pt-4 border-t border-white/30">
                   <p className="text-2xl font-semibold text-white tracking-wide" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
                     Optimalisatie-Analyse
                   </p>
