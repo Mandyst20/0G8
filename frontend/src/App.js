@@ -192,6 +192,13 @@ function App() {
     doc.setFont("helvetica", "normal");
     doc.text("Winkel Omzetanalyse Rapport", pageWidth / 2, yPosition, { align: "center" });
     
+    yPosition += 6;
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(37, 99, 235); // Blue color
+    doc.text(formData.companyName, pageWidth / 2, yPosition, { align: "center" });
+    doc.setTextColor(0, 0, 0);
+    
     yPosition += 15;
     
     // Basisgegevens
