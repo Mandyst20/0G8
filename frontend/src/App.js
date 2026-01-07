@@ -645,7 +645,7 @@ function App() {
                 {results.identifiedProblems.length > 0 && (
                   <div className="mt-8">
                     <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
-                      <h3 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+                      <h3 className="text-2xl font-semibold text-gray-800 tracking-wide flex items-center gap-2" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
                         <span className="text-2xl">🔍</span>
                         Waarom blijft dit geld liggen?
                       </h3>
