@@ -211,6 +211,8 @@ function App() {
     
     doc.setFontSize(11);
     doc.setFont("helvetica", "normal");
+    doc.text(`Bedrijf: ${formData.companyName}`, 20, yPosition);
+    yPosition += 7;
     doc.text(`Winkeloppervlakte: ${formData.area} m²`, 20, yPosition);
     yPosition += 7;
     doc.text(`Gemiddelde omzet per week: ${formatCurrency(parseFloat(formData.weeklyRevenue))}`, 20, yPosition);
