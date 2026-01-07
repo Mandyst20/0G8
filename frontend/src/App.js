@@ -545,8 +545,8 @@ function App() {
                         </div>
                       )}
                       
-                      <div className={`border-2 rounded-md p-5 ${categoryColors[item.categoryColor]}`}>
-                        <p className="text-gray-800 mb-3 text-base font-medium">
+                      <div className={`border-2 rounded-md px-5 py-6 ${categoryColors[item.categoryColor]}`}>
+                        <p className="text-gray-800 mb-4 text-base font-medium">
                           {index + 1}. {item.question}
                         </p>
                         <div className="flex space-x-3">
