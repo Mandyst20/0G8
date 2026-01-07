@@ -419,7 +419,7 @@ function App() {
           {/* Header */}
           <div className="relative mb-12 overflow-hidden">
             {/* Gradient Background - Fris Groen → Turquoise → Blauw */}
-            <div className="bg-gradient-to-br from-emerald-500 via-cyan-500 to-blue-600 rounded-2xl shadow-xl p-12 text-center">
+            <div className="bg-gradient-to-br from-emerald-500 via-cyan-500 to-blue-600 rounded-lg shadow-xl p-12 text-center">
               {/* Decorative circles */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-32 -mt-32"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full -ml-24 -mb-24"></div>
