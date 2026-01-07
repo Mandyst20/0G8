@@ -446,7 +446,9 @@ function App() {
             {/* Input Section */}
             <div className="mb-10">
               <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
-                <h2 className="text-2xl font-bold text-gray-800">Basisgegevens</h2>
+                <h2 className="text-2xl font-semibold text-gray-800 tracking-wide" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
+                  Basisgegevens
+                </h2>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
