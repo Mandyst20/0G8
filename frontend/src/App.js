@@ -691,7 +691,7 @@ function App() {
                 )}
 
                 {results.identifiedProblems.length === 0 && (
-                  <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 mt-8">
+                  <div className="bg-emerald-50 border border-emerald-200 rounded-md p-6 mt-8">
                     <h3 className="text-lg font-bold text-emerald-800 mb-2">
                       🎉 Goede basis!
                     </h3>
