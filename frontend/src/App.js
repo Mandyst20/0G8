@@ -715,7 +715,7 @@ function App() {
                   <button
                     onClick={resetCalculator}
                     data-testid="reset-calculator-btn"
-                    className="px-8 py-4 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-all duration-200 font-semibold shadow-sm hover:shadow-md text-base"
+                    className="px-8 py-4 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-all duration-200 font-semibold shadow-sm hover:shadow-md text-base"
                   >
                     Opnieuw berekenen
                   </button>
