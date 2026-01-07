@@ -523,10 +523,15 @@ function App() {
 
               <div className="space-y-6">
                 {questionsData.map((item, index) => {
-                  const categoryColors = {
-                    yellow: "bg-yellow-50 border-yellow-300",
-                    red: "bg-red-50 border-red-300",
-                    green: "bg-green-50 border-green-300"
+                  const categoryGradients = {
+                    yellow: "bg-gradient-to-br from-yellow-50 to-yellow-100",
+                    red: "bg-gradient-to-br from-red-50 to-red-100",
+                    green: "bg-gradient-to-br from-green-50 to-green-100"
+                  };
+                  const categoryBorders = {
+                    yellow: "border-yellow-300",
+                    red: "border-red-300",
+                    green: "border-green-300"
                   };
                   const categoryEmojis = {
                     yellow: "🟡",
@@ -545,8 +550,8 @@ function App() {
                         </div>
                       )}
                       
-                      <div className={`border-2 rounded-md px-5 py-6 ${categoryColors[item.categoryColor]}`}>
-                        <p className="text-gray-800 mb-4 text-base font-medium">
+                      <div className={`border-2 rounded-md px-6 py-8 ${categoryGradients[item.categoryColor]} ${categoryBorders[item.categoryColor]}`}>
+                        <p className="text-gray-800 mb-5 text-base font-medium leading-relaxed">
                           {index + 1}. {item.question}
                         </p>
                         <div className="flex space-x-3">
