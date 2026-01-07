@@ -652,7 +652,7 @@ function App() {
                     </div>
                     <div className="space-y-6">
                       {results.identifiedProblems.map((problem, index) => (
-                        <div key={index} className="bg-orange-50 border border-orange-200 rounded-xl p-6 shadow-sm">
+                        <div key={index} className="bg-orange-50 border border-orange-200 rounded-md p-6 shadow-sm">
                           <div className="flex items-start space-x-3 mb-4">
                             <div className="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-base">
                               {problem.linkedBlock}
