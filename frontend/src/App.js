@@ -162,6 +162,7 @@ function App() {
 
   const resetCalculator = () => {
     setFormData({
+      companyName: "",
       area: "",
       weeklyRevenue: "",
       q1: null,
