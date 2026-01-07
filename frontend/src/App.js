@@ -442,7 +442,7 @@ function App() {
           </div>
 
           {/* Main Content Card */}
-          <div className="bg-white rounded-2xl shadow-md p-10 mb-8">
+          <div className="bg-white rounded-lg shadow-md p-10 mb-8">
             {/* Input Section */}
             <div className="mb-10">
               <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
