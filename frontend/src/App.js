@@ -465,7 +465,7 @@ function App() {
                     data-testid="company-name-input"
                     value={formData.companyName}
                     onChange={(e) => handleInputChange("companyName", e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
                     placeholder="Bijv. Modewinkel De Stijl"
                   />
                 </div>
@@ -483,7 +483,7 @@ function App() {
                     data-testid="area-input"
                     value={formData.area}
                     onChange={(e) => handleInputChange("area", e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
                     placeholder="Bijv. 150"
                   />
                 </div>
@@ -503,7 +503,7 @@ function App() {
                     onChange={(e) =>
                       handleInputChange("weeklyRevenue", e.target.value)
                     }
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
+                    className="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
                     placeholder="Bijv. 5000"
                   />
                 </div>
