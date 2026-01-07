@@ -612,7 +612,7 @@ function App() {
                   </div>
 
                   {/* Block B - Untapped Revenue */}
-                  <div className="bg-amber-50 rounded-xl border border-amber-200 p-6 shadow-sm" data-testid="results-block-b">
+                  <div className="bg-amber-50 rounded-md border border-amber-200 p-6 shadow-sm" data-testid="results-block-b">
                     <h3 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-4">
                       ⚠️ Structureel onbenut
                     </h3>
