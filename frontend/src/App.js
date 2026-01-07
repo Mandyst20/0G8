@@ -584,7 +584,9 @@ function App() {
             {results && (
               <div className="space-y-8 pt-8 border-t border-gray-200">
                 <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 rounded-lg">
-                  <h2 className="text-2xl font-bold text-gray-800">Jouw Resultaten</h2>
+                  <h2 className="text-2xl font-semibold text-gray-800 tracking-wide" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
+                    Jouw Resultaten
+                  </h2>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
