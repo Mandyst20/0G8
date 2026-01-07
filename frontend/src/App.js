@@ -5,6 +5,7 @@ import "@/App.css";
 
 function App() {
   const [formData, setFormData] = useState({
+    companyName: "",
     area: "",
     weeklyRevenue: "",
     q1: null,
