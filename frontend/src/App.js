@@ -186,237 +186,253 @@ function App() {
       const pageWidth = doc.internal.pageSize.width;
       let yPosition = 20;
 
-    // Header
-    doc.setFontSize(24);
-    doc.setFont("helvetica", "bold");
-    doc.text("OG8", pageWidth / 2, yPosition, { align: "center" });
-    
-    yPosition += 8;
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "normal");
-    doc.text("Winkel Omzetanalyse Rapport", pageWidth / 2, yPosition, { align: "center" });
-    
-    yPosition += 6;
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(37, 99, 235); // Blue color
-    doc.text(formData.companyName, pageWidth / 2, yPosition, { align: "center" });
-    doc.setTextColor(0, 0, 0);
-    
-    yPosition += 15;
-    
-    // Basisgegevens
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setFillColor(219, 234, 254); // Light blue
-    doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
-    doc.text("Basisgegevens", 20, yPosition);
-    yPosition += 12;
-    
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Bedrijf: ${formData.companyName}`, 20, yPosition);
-    yPosition += 7;
-    doc.text(`Winkeloppervlakte: ${formData.area} m²`, 20, yPosition);
-    yPosition += 7;
-    doc.text(`Gemiddelde omzet per week: ${formatCurrency(parseFloat(formData.weeklyRevenue))}`, 20, yPosition);
-    yPosition += 15;
-    
-    // Inzichtscan Antwoorden
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setFillColor(219, 234, 254);
-    doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
-    doc.text("Inzichtscan - Uw Antwoorden", 20, yPosition);
-    yPosition += 10;
-    
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    
-    const answers = [formData.q1, formData.q2, formData.q3, formData.q4, formData.q5, formData.q6, formData.q7, formData.q8];
-    let currentCategory = "";
-    
-    questionsData.forEach((item, index) => {
-      // Check if we need a new page
-      if (yPosition > 250) {
-        doc.addPage();
-        yPosition = 20;
-      }
-      
-      // Show category header
-      if (item.category !== currentCategory) {
-        currentCategory = item.category;
-        yPosition += 5;
-        doc.setFont("helvetica", "bold");
-        doc.setFontSize(11);
-        
-        const categoryEmojis = {
-          yellow: "🟡",
-          red: "🔴",
-          green: "🟢"
-        };
-        doc.text(`${categoryEmojis[item.categoryColor]} Categorie ${item.category} - ${item.categoryName}`, 20, yPosition);
-        yPosition += 7;
-        doc.setFontSize(10);
-        doc.setFont("helvetica", "normal");
-      }
-      
-      const answer = answers[index] === true ? "Waar" : "Niet waar";
-      const answerColor = answers[index] === true ? [16, 185, 129] : [249, 115, 22]; // Green or Orange
-      
-      doc.setFont("helvetica", "normal");
-      doc.text(`${index + 1}. ${item.question}`, 20, yPosition, { maxWidth: pageWidth - 40 });
-      
-      const textHeight = doc.getTextDimensions(item.question, { maxWidth: pageWidth - 40 }).h;
-      yPosition += textHeight + 2;
-      
+      // Header
+      doc.setFontSize(24);
       doc.setFont("helvetica", "bold");
-      doc.setTextColor(...answerColor);
-      doc.text(`   → ${answer}`, 20, yPosition);
+      doc.text("OG8", pageWidth / 2, yPosition, { align: "center" });
+      
+      yPosition += 8;
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "normal");
+      doc.text("Winkel Omzetanalyse Rapport", pageWidth / 2, yPosition, { align: "center" });
+      
+      yPosition += 6;
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(37, 99, 235);
+      doc.text(formData.companyName, pageWidth / 2, yPosition, { align: "center" });
       doc.setTextColor(0, 0, 0);
-      yPosition += 7;
-    });
-    
-    // New page for results
-    doc.addPage();
-    yPosition = 20;
-    
-    // Resultaten Header
-    doc.setFontSize(14);
-    doc.setFont("helvetica", "bold");
-    doc.setFillColor(219, 234, 254);
-    doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
-    doc.text("Uw Resultaten", 20, yPosition);
-    yPosition += 15;
-    
-    // Block A - Huidige situatie
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(75, 85, 99);
-    doc.text("📊 HUIDIGE SITUATIE", 20, yPosition);
-    yPosition += 8;
-    
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "normal");
-    doc.text(`Jaaromzet: ${formatCurrency(results.yearlyRevenue)}`, 25, yPosition);
-    yPosition += 7;
-    doc.text(`Omzet per m² per jaar: ${formatCurrency(results.revenuePerM2)}`, 25, yPosition);
-    yPosition += 12;
-    
-    // Block B - Structureel onbenut
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(217, 119, 6);
-    doc.text("⚠️ STRUCTUREEL ONBENUT", 20, yPosition);
-    yPosition += 8;
-    
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(0, 0, 0);
-    doc.text(`Bedrag dat jaarlijks blijft liggen: ${formatCurrency(results.untappedRevenue)}`, 25, yPosition);
-    yPosition += 7;
-    
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "italic");
-    const explanationText = `Op basis van jouw antwoorden en benchmarks uit retailonderzoek blijft momenteel circa ${results.percentage}% van je omzet onbenut binnen de huidige winkelopzet.`;
-    doc.text(explanationText, 25, yPosition, { maxWidth: pageWidth - 50 });
-    yPosition += 12;
-    
-    // Block C - Na optimalisatie
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.setTextColor(5, 150, 105);
-    doc.text("✨ NA OPTIMALISATIE", 20, yPosition);
-    yPosition += 8;
-    
-    doc.setFontSize(11);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(0, 0, 0);
-    doc.text(`Potentiële jaaromzet na verbetering: ${formatCurrency(results.potentialRevenue)}`, 25, yPosition);
-    yPosition += 15;
-    
-    // Problems & Solutions
-    if (results.identifiedProblems.length > 0) {
+      
+      yPosition += 15;
+      
+      // Basisgegevens
       doc.setFontSize(14);
       doc.setFont("helvetica", "bold");
       doc.setFillColor(219, 234, 254);
       doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
-      doc.text("🔍 Waarom blijft dit geld liggen?", 20, yPosition);
+      doc.text("Basisgegevens", 20, yPosition);
       yPosition += 12;
       
-      results.identifiedProblems.forEach((problem, index) => {
-        // Check if we need a new page
-        if (yPosition > 220) {
+      doc.setFontSize(11);
+      doc.setFont("helvetica", "normal");
+      doc.text(`Bedrijf: ${formData.companyName}`, 20, yPosition);
+      yPosition += 7;
+      doc.text(`Winkeloppervlakte: ${formData.area} m2`, 20, yPosition);
+      yPosition += 7;
+      doc.text(`Gemiddelde omzet per week: ${formatCurrency(parseFloat(formData.weeklyRevenue))}`, 20, yPosition);
+      yPosition += 15;
+      
+      // Inzichtscan Antwoorden
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.setFillColor(219, 234, 254);
+      doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
+      doc.text("Inzichtscan - Uw Antwoorden", 20, yPosition);
+      yPosition += 10;
+      
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "normal");
+      
+      const answers = [formData.q1, formData.q2, formData.q3, formData.q4, formData.q5, formData.q6, formData.q7, formData.q8];
+      let currentCategory = "";
+      
+      const categoryNames = {
+        A: "Categorie A - Structuur & keuzes",
+        B: "Categorie B - Volwassenheid / smart retail",
+        C: "Categorie C - Herkenning"
+      };
+      
+      questionsData.forEach((item, index) => {
+        if (yPosition > 250) {
           doc.addPage();
           yPosition = 20;
         }
         
-        // Problem header
-        doc.setFontSize(12);
-        doc.setFont("helvetica", "bold");
-        doc.setTextColor(249, 115, 22);
-        doc.text(`BLOK ${problem.linkedBlock}: ${problem.problem}`, 20, yPosition);
-        yPosition += 8;
+        if (item.category !== currentCategory) {
+          currentCategory = item.category;
+          yPosition += 5;
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(11);
+          doc.text(categoryNames[item.category], 20, yPosition);
+          yPosition += 7;
+          doc.setFontSize(10);
+          doc.setFont("helvetica", "normal");
+        }
         
-        doc.setFontSize(10);
-        doc.setFont("helvetica", "italic");
+        const answer = answers[index] === true ? "Waar" : "Niet waar";
+        const answerColor = answers[index] === true ? [16, 185, 129] : [249, 115, 22];
+        
+        doc.setFont("helvetica", "normal");
+        const questionText = `${index + 1}. ${item.question}`;
+        const splitQuestion = doc.splitTextToSize(questionText, pageWidth - 40);
+        
+        splitQuestion.forEach(line => {
+          if (yPosition > 270) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          doc.text(line, 20, yPosition);
+          yPosition += 5;
+        });
+        
+        doc.setFont("helvetica", "bold");
+        doc.setTextColor(...answerColor);
+        doc.text(`   Antwoord: ${answer}`, 20, yPosition);
         doc.setTextColor(0, 0, 0);
-        doc.text(`"${problem.problemDescription}"`, 25, yPosition, { maxWidth: pageWidth - 50 });
         yPosition += 7;
-        
-        // Hier lekt omzet weg
-        doc.setFont("helvetica", "bold");
-        doc.text("HIER LEKT OMZET WEG:", 25, yPosition);
-        yPosition += 6;
-        
-        doc.setFont("helvetica", "normal");
-        const explanationLines = doc.splitTextToSize(problem.explanation, pageWidth - 50);
-        explanationLines.forEach(line => {
-          if (yPosition > 270) {
-            doc.addPage();
-            yPosition = 20;
-          }
-          doc.text(line, 25, yPosition);
-          yPosition += 5;
-        });
-        yPosition += 5;
-        
-        // Oplossing
-        doc.setFont("helvetica", "bold");
-        doc.setTextColor(5, 150, 105);
-        doc.text("💡 OPLOSSING:", 25, yPosition);
-        yPosition += 6;
-        
-        doc.setFont("helvetica", "normal");
-        doc.setTextColor(0, 0, 0);
-        const solutionLines = doc.splitTextToSize(problem.solution, pageWidth - 50);
-        solutionLines.forEach(line => {
-          if (yPosition > 270) {
-            doc.addPage();
-            yPosition = 20;
-          }
-          doc.text(line, 25, yPosition);
-          yPosition += 5;
-        });
-        yPosition += 10;
       });
-    }
-    
-    // Footer on last page
-    const totalPages = doc.internal.pages.length - 1;
-    for (let i = 1; i <= totalPages; i++) {
-      doc.setPage(i);
-      doc.setFontSize(9);
+      
+      // New page for results
+      doc.addPage();
+      yPosition = 20;
+      
+      // Resultaten Header
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.setFillColor(219, 234, 254);
+      doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
+      doc.text("Uw Resultaten", 20, yPosition);
+      yPosition += 15;
+      
+      // Block A
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(75, 85, 99);
+      doc.text("HUIDIGE SITUATIE", 20, yPosition);
+      yPosition += 8;
+      
+      doc.setFontSize(11);
       doc.setFont("helvetica", "normal");
-      doc.setTextColor(150, 150, 150);
-      doc.text(`OG8 - Versie 1.0 | Pagina ${i} van ${totalPages}`, pageWidth / 2, 285, { align: "center" });
-      doc.text(`Gegenereerd op: ${new Date().toLocaleDateString('nl-NL')}`, pageWidth / 2, 290, { align: "center" });
-    }
-    
-    // Save PDF
-    const sanitizedCompanyName = formData.companyName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
-    doc.save(`Optimalisatie-analyse - ${sanitizedCompanyName}.pdf`);
-    
-    setIsGeneratingPDF(false);
-    alert('PDF succesvol gedownload!');
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Jaaromzet: ${formatCurrency(results.yearlyRevenue)}`, 25, yPosition);
+      yPosition += 7;
+      doc.text(`Omzet per m2 per jaar: ${formatCurrency(results.revenuePerM2)}`, 25, yPosition);
+      yPosition += 12;
+      
+      // Block B
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(217, 119, 6);
+      doc.text("STRUCTUREEL ONBENUT", 20, yPosition);
+      yPosition += 8;
+      
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Bedrag dat jaarlijks blijft liggen: ${formatCurrency(results.untappedRevenue)}`, 25, yPosition);
+      yPosition += 7;
+      
+      doc.setFontSize(10);
+      doc.setFont("helvetica", "italic");
+      const explanationText = `Op basis van jouw antwoorden en benchmarks uit retailonderzoek blijft momenteel circa ${results.percentage}% van je omzet onbenut binnen de huidige winkelopzet.`;
+      const splitExplanation = doc.splitTextToSize(explanationText, pageWidth - 50);
+      splitExplanation.forEach(line => {
+        doc.text(line, 25, yPosition);
+        yPosition += 5;
+      });
+      yPosition += 7;
+      
+      // Block C
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(5, 150, 105);
+      doc.text("NA OPTIMALISATIE", 20, yPosition);
+      yPosition += 8;
+      
+      doc.setFontSize(11);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(0, 0, 0);
+      doc.text(`Potentiele jaaromzet na verbetering: ${formatCurrency(results.potentialRevenue)}`, 25, yPosition);
+      yPosition += 15;
+      
+      // Problems & Solutions
+      if (results.identifiedProblems.length > 0) {
+        doc.setFontSize(14);
+        doc.setFont("helvetica", "bold");
+        doc.setFillColor(219, 234, 254);
+        doc.rect(14, yPosition - 5, pageWidth - 28, 10, "F");
+        doc.text("Waarom blijft dit geld liggen?", 20, yPosition);
+        yPosition += 12;
+        
+        results.identifiedProblems.forEach((problem, index) => {
+          if (yPosition > 220) {
+            doc.addPage();
+            yPosition = 20;
+          }
+          
+          // Problem header
+          doc.setFontSize(12);
+          doc.setFont("helvetica", "bold");
+          doc.setTextColor(249, 115, 22);
+          doc.text(`BLOK ${problem.linkedBlock}: ${problem.problem}`, 20, yPosition);
+          yPosition += 8;
+          
+          doc.setFontSize(10);
+          doc.setFont("helvetica", "italic");
+          doc.setTextColor(0, 0, 0);
+          const splitProbDesc = doc.splitTextToSize(`"${problem.problemDescription}"`, pageWidth - 50);
+          splitProbDesc.forEach(line => {
+            if (yPosition > 270) {
+              doc.addPage();
+              yPosition = 20;
+            }
+            doc.text(line, 25, yPosition);
+            yPosition += 5;
+          });
+          yPosition += 3;
+          
+          // Hier lekt omzet weg
+          doc.setFont("helvetica", "bold");
+          doc.text("HIER LEKT OMZET WEG:", 25, yPosition);
+          yPosition += 6;
+          
+          doc.setFont("helvetica", "normal");
+          const splitExpl = doc.splitTextToSize(problem.explanation, pageWidth - 50);
+          splitExpl.forEach(line => {
+            if (yPosition > 270) {
+              doc.addPage();
+              yPosition = 20;
+            }
+            doc.text(line, 25, yPosition);
+            yPosition += 5;
+          });
+          yPosition += 5;
+          
+          // Oplossing
+          doc.setFont("helvetica", "bold");
+          doc.setTextColor(5, 150, 105);
+          doc.text("OPLOSSING:", 25, yPosition);
+          yPosition += 6;
+          
+          doc.setFont("helvetica", "normal");
+          doc.setTextColor(0, 0, 0);
+          const splitSol = doc.splitTextToSize(problem.solution, pageWidth - 50);
+          splitSol.forEach(line => {
+            if (yPosition > 270) {
+              doc.addPage();
+              yPosition = 20;
+            }
+            doc.text(line, 25, yPosition);
+            yPosition += 5;
+          });
+          yPosition += 10;
+        });
+      }
+      
+      // Footer
+      const totalPages = doc.internal.pages.length - 1;
+      for (let i = 1; i <= totalPages; i++) {
+        doc.setPage(i);
+        doc.setFontSize(9);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(150, 150, 150);
+        doc.text(`OG8 - Versie 1.0 | Pagina ${i} van ${totalPages}`, pageWidth / 2, 285, { align: "center" });
+        doc.text(`Gegenereerd op: ${new Date().toLocaleDateString('nl-NL')}`, pageWidth / 2, 290, { align: "center" });
+      }
+      
+      const sanitizedCompanyName = formData.companyName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+      doc.save(`Optimalisatie-analyse - ${sanitizedCompanyName}.pdf`);
+      
+      setIsGeneratingPDF(false);
+      alert('PDF succesvol gedownload!');
     } catch (error) {
       console.error('Error generating PDF:', error);
       setIsGeneratingPDF(false);
