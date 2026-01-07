@@ -179,9 +179,12 @@ function App() {
   };
 
   const generatePDF = () => {
-    const doc = new jsPDF();
-    const pageWidth = doc.internal.pageSize.width;
-    let yPosition = 20;
+    try {
+      setIsGeneratingPDF(true);
+      
+      const doc = new jsPDF();
+      const pageWidth = doc.internal.pageSize.width;
+      let yPosition = 20;
 
     // Header
     doc.setFontSize(24);
