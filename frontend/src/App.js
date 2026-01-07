@@ -407,8 +407,9 @@ function App() {
       doc.text(`Gegenereerd op: ${new Date().toLocaleDateString('nl-NL')}`, pageWidth / 2, 290, { align: "center" });
     }
     
-    // Save PDF
-    doc.save(`OG8_Rapport_${formData.area}m2_${new Date().toLocaleDateString('nl-NL').replace(/\//g, '-')}.pdf`);
+    // Save PDF with company name
+    const sanitizedCompanyName = formData.companyName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
+    doc.save(`Optimalisatie-analyse - ${sanitizedCompanyName}.pdf`);
   };
 
   return (
