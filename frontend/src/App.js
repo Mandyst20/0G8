@@ -676,7 +676,7 @@ function App() {
                             </p>
                           </div>
 
-                          <div className="bg-emerald-50 rounded-lg p-5 border-l-4 border-emerald-500">
+                          <div className="bg-emerald-50 rounded-md p-5 border-l-4 border-emerald-500">
                             <h5 className="text-sm font-bold text-emerald-700 uppercase tracking-wider mb-3">
                               💡 Oplossing:
                             </h5>
