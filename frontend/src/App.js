@@ -424,12 +424,34 @@ function App() {
                 <h2 className="text-2xl font-bold text-gray-800">Basisgegevens</h2>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="md:col-span-3">
+                  <label
+                    htmlFor="companyName"
+                    className="block text-base font-semibold text-gray-700 mb-2"
+                  >
+                    Bedrijf
+                  </label>
+                  <input
+                    id="companyName"
+                    type="text"
+                    data-testid="company-name-input"
+                    value={formData.companyName}
+                    onChange={(e) => handleInputChange("companyName", e.target.value)}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
+                    placeholder="Bijv. Modewinkel De Stijl"
+                  />
+                </div>
+
                 <div>
-                  <label className="block text-base font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="area"
+                    className="block text-base font-semibold text-gray-700 mb-2"
+                  >
                     Winkeloppervlakte (m²)
                   </label>
                   <input
+                    id="area"
                     type="number"
                     data-testid="area-input"
                     value={formData.area}
@@ -439,15 +461,21 @@ function App() {
                   />
                 </div>
 
-                <div>
-                  <label className="block text-base font-semibold text-gray-700 mb-2">
+                <div className="md:col-span-2">
+                  <label
+                    htmlFor="weeklyRevenue"
+                    className="block text-base font-semibold text-gray-700 mb-2"
+                  >
                     Gemiddelde omzet per week (€)
                   </label>
                   <input
+                    id="weeklyRevenue"
                     type="number"
                     data-testid="weekly-revenue-input"
                     value={formData.weeklyRevenue}
-                    onChange={(e) => handleInputChange("weeklyRevenue", e.target.value)}
+                    onChange={(e) =>
+                      handleInputChange("weeklyRevenue", e.target.value)
+                    }
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all outline-none text-gray-800 text-base"
                     placeholder="Bijv. 5000"
                   />
