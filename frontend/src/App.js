@@ -667,7 +667,7 @@ function App() {
                             </div>
                           </div>
                           
-                          <div className="bg-white rounded-lg p-5 border-l-4 border-yellow-400 mb-4">
+                          <div className="bg-white rounded-md p-5 border-l-4 border-yellow-400 mb-4">
                             <h5 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-3">
                               Hier lekt omzet weg:
                             </h5>
