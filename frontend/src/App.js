@@ -628,7 +628,7 @@ function App() {
                   </div>
 
                   {/* Block C - After Optimization */}
-                  <div className="bg-emerald-50 rounded-xl border border-emerald-200 p-6 shadow-sm" data-testid="results-block-c">
+                  <div className="bg-emerald-50 rounded-md border border-emerald-200 p-6 shadow-sm" data-testid="results-block-c">
                     <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-4">
                       ✨ Na optimalisatie
                     </h3>
