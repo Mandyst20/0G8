@@ -591,7 +591,7 @@ function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Block A - Current Situation */}
-                  <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm" data-testid="results-block-a">
+                  <div className="bg-white rounded-md border border-gray-200 p-6 shadow-sm" data-testid="results-block-a">
                     <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
                       📊 Huidige situatie
                     </h3>
