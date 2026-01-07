@@ -539,13 +539,13 @@ function App() {
                       {/* Show category header only for first question of each category */}
                       {(index === 0 || questionsData[index].category !== questionsData[index - 1].category) && (
                         <div className="mb-3">
-                          <h3 className="text-sm font-bold text-gray-700 uppercase tracking-wide">
+                          <h3 className="text-lg font-bold text-gray-700 uppercase tracking-wide">
                             {categoryEmojis[item.categoryColor]} Categorie {item.category} – {item.categoryName}
                           </h3>
                         </div>
                       )}
                       
-                      <div className={`border-2 rounded-xl p-5 ${categoryColors[item.categoryColor]}`}>
+                      <div className={`border-2 rounded-md p-5 ${categoryColors[item.categoryColor]}`}>
                         <p className="text-gray-800 mb-3 text-base font-medium">
                           {index + 1}. {item.question}
                         </p>
