@@ -411,9 +411,17 @@ function App() {
       doc.text(`Gegenereerd op: ${new Date().toLocaleDateString('nl-NL')}`, pageWidth / 2, 290, { align: "center" });
     }
     
-    // Save PDF with company name
+    // Save PDF
     const sanitizedCompanyName = formData.companyName.replace(/[^a-zA-Z0-9\s]/g, '').replace(/\s+/g, '_');
     doc.save(`Optimalisatie-analyse - ${sanitizedCompanyName}.pdf`);
+    
+    setIsGeneratingPDF(false);
+    alert('PDF succesvol gedownload!');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      setIsGeneratingPDF(false);
+      alert('Er is een fout opgetreden bij het genereren van de PDF. Probeer het opnieuw.');
+    }
   };
 
   return (
