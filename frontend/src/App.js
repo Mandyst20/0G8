@@ -99,6 +99,7 @@ function App() {
 
   useEffect(() => {
     if (
+      formData.companyName &&
       formData.area &&
       formData.weeklyRevenue &&
       formData.q1 !== null &&
