@@ -618,7 +618,7 @@ function App() {
 
                   {/* Block B - Untapped Revenue */}
                   <div className="bg-amber-50 rounded-md border border-amber-200 p-6 shadow-sm" data-testid="results-block-b">
-                    <h3 className="text-sm font-bold text-amber-600 uppercase tracking-wider mb-4">
+                    <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wide mb-4" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
                       ⚠️ Structureel onbenut
                     </h3>
                     <div>
