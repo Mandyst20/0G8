@@ -18,6 +18,7 @@ function App() {
     q8: null,
   });
   const [results, setResults] = useState(null);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
   const questionsData = [
     // Categorie A - Structuur & keuzes (🟡 Geel)
