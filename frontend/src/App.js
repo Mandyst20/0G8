@@ -634,7 +634,7 @@ function App() {
 
                   {/* Block C - After Optimization */}
                   <div className="bg-emerald-50 rounded-md border border-emerald-200 p-6 shadow-sm" data-testid="results-block-c">
-                    <h3 className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-4">
+                    <h3 className="text-sm font-semibold text-emerald-600 uppercase tracking-wide mb-4" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
                       ✨ Na optimalisatie
                     </h3>
                     <div>
