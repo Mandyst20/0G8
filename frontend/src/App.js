@@ -631,7 +631,7 @@ function App() {
                   {/* Block A - Current Situation */}
                   <div className="bg-white rounded-md border border-gray-200 p-6 shadow-sm" data-testid="results-block-a">
                     <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
-                      📊 Huidige situatie
+                      Huidige situatie
                     </h3>
                     <div className="space-y-3">
                       <div>
@@ -652,7 +652,7 @@ function App() {
                   {/* Block B - Untapped Revenue */}
                   <div className="bg-amber-50 rounded-md border border-amber-200 p-6 shadow-sm" data-testid="results-block-b">
                     <h3 className="text-sm font-semibold text-amber-600 uppercase tracking-wide mb-4" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
-                      ⚠️ Structureel onbenut
+                      Structureel onbenut
                     </h3>
                     <div>
                       <div className="text-base text-gray-700 mb-2">Bedrag dat jaarlijks blijft liggen:</div>
@@ -668,7 +668,7 @@ function App() {
                   {/* Block C - After Optimization */}
                   <div className="bg-emerald-50 rounded-md border border-emerald-200 p-6 shadow-sm" data-testid="results-block-c">
                     <h3 className="text-sm font-semibold text-emerald-600 uppercase tracking-wide mb-4" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
-                      ✨ Na optimalisatie
+                      Na optimalisatie
                     </h3>
                     <div>
                       <div className="text-base text-gray-700 mb-2">Potentiële jaaromzet na verbetering:</div>
@@ -681,8 +681,7 @@ function App() {
 
                 {/* Pain Breakdown Section - Make the loss tangible */}
                 <div className="mt-8 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-2 border-red-200 p-6 shadow-md" data-testid="pain-breakdown">
-                  <h3 className="text-xl font-bold text-red-700 mb-4 flex items-center gap-2">
-                    <span className="text-2xl">💸</span>
+                  <h3 className="text-xl font-bold text-red-700 mb-4">
                     Dit loopt er nu weg uit uw winkel...
                   </h3>
                   
