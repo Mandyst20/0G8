@@ -468,7 +468,7 @@ function App() {
                   OG8
                 </h1>
                 <p className="text-xl text-white/90 font-light mb-2" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif"}}>
-                  Ontdek het potentieel van uw winkel
+                  Ontdek het potentieel van je winkel
                 </p>
                 <div className="mt-4 pt-4 border-t border-white/30">
                   <p className="text-2xl font-semibold text-white tracking-wide" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
@@ -662,7 +662,7 @@ function App() {
                 {/* Pain Breakdown Section - Make the loss tangible */}
                 <div className="mt-8 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-2 border-red-200 p-6 shadow-md" data-testid="pain-breakdown">
                   <h3 className="text-xl font-bold text-red-700 mb-4">
-                    Dit loopt er nu weg uit uw winkel...
+                    Dit loopt er nu weg uit je winkel...
                   </h3>
                   
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
