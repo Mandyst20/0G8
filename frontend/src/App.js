@@ -561,29 +561,9 @@ function App() {
 
               <div className="space-y-6">
                 {questionsData.map((item, index) => {
-                  const categoryGradients = {
-                    yellow: "bg-gradient-to-br from-yellow-50 to-yellow-100",
-                    red: "bg-gradient-to-br from-red-50 to-red-100",
-                    green: "bg-gradient-to-br from-green-50 to-green-100"
-                  };
-                  const categoryBorders = {
-                    yellow: "border-yellow-300",
-                    red: "border-red-300",
-                    green: "border-green-300"
-                  };
-
                   return (
                     <div key={index}>
-                      {/* Show category header only for first question of each category */}
-                      {(index === 0 || questionsData[index].category !== questionsData[index - 1].category) && (
-                        <div className="mb-3">
-                          <h3 className="text-lg font-bold text-gray-700 uppercase tracking-wide">
-                            Categorie {item.category} – {item.categoryName}
-                          </h3>
-                        </div>
-                      )}
-                      
-                      <div className={`border-2 rounded-md px-6 py-8 ${categoryGradients[item.categoryColor]} ${categoryBorders[item.categoryColor]}`}>
+                      <div className="border-2 rounded-md px-6 py-8 bg-gradient-to-br from-gray-50 to-gray-100 border-gray-200">
                         <p className="text-gray-800 mb-5 text-base font-medium leading-relaxed">
                           {index + 1}. {item.question}
                         </p>
