@@ -685,6 +685,39 @@ function App() {
                   </div>
                 </div>
 
+                {/* Pain Breakdown Section - Make the loss tangible */}
+                <div className="mt-8 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-2 border-red-200 p-6 shadow-md" data-testid="pain-breakdown">
+                  <h3 className="text-xl font-bold text-red-700 mb-4 flex items-center gap-2">
+                    <span className="text-2xl">💸</span>
+                    Dit loopt er nu weg uit uw winkel...
+                  </h3>
+                  
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="bg-white rounded-lg p-4 border border-red-200 text-center shadow-sm">
+                      <div className="text-sm text-gray-600 mb-1">Per maand</div>
+                      <div className="text-xl font-bold text-red-600">{formatCurrency(results.untappedPerMonth)}</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-red-200 text-center shadow-sm">
+                      <div className="text-sm text-gray-600 mb-1">Per week</div>
+                      <div className="text-xl font-bold text-red-600">{formatCurrency(results.untappedPerWeek)}</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-red-200 text-center shadow-sm">
+                      <div className="text-sm text-gray-600 mb-1">Per dag</div>
+                      <div className="text-xl font-bold text-red-600">{formatCurrency(results.untappedPerDay)}</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-4 border border-red-200 text-center shadow-sm">
+                      <div className="text-sm text-gray-600 mb-1">Per uur</div>
+                      <div className="text-xl font-bold text-red-600">{formatCurrency(results.untappedPerHour)}</div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4 bg-red-100 rounded-lg p-4 border-l-4 border-red-500">
+                    <p className="text-red-800 font-medium text-base italic">
+                      "Terwijl we hier zitten te praten, loopt er {formatCurrency(results.untappedPerHour)} per uur uw winkel uit."
+                    </p>
+                  </div>
+                </div>
+
                 {/* Problems & Solutions */}
                 {results.identifiedProblems.length > 0 && (
                   <div className="mt-8">
