@@ -571,11 +571,6 @@ function App() {
                     red: "border-red-300",
                     green: "border-green-300"
                   };
-                  const categoryEmojis = {
-                    yellow: "🟡",
-                    red: "🔴",
-                    green: "🟢"
-                  };
 
                   return (
                     <div key={index}>
@@ -583,7 +578,7 @@ function App() {
                       {(index === 0 || questionsData[index].category !== questionsData[index - 1].category) && (
                         <div className="mb-3">
                           <h3 className="text-lg font-bold text-gray-700 uppercase tracking-wide">
-                            {categoryEmojis[item.categoryColor]} Categorie {item.category} – {item.categoryName}
+                            Categorie {item.category} – {item.categoryName}
                           </h3>
                         </div>
                       )}
