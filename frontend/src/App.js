@@ -741,7 +741,7 @@ function App() {
 
                           <div className="bg-emerald-50 rounded-md p-5 border-l-4 border-emerald-500">
                             <h5 className="text-sm font-bold text-emerald-700 uppercase tracking-wider mb-3">
-                              💡 Oplossing:
+                              Oplossing:
                             </h5>
                             <p className="text-base text-gray-800 leading-relaxed">
                               {problem.solution}
@@ -756,7 +756,7 @@ function App() {
                 {results.identifiedProblems.length === 0 && (
                   <div className="bg-emerald-50 border border-emerald-200 rounded-md p-6 mt-8">
                     <h3 className="text-lg font-bold text-emerald-800 mb-2">
-                      🎉 Goede basis!
+                      Goede basis!
                     </h3>
                     <p className="text-base text-gray-700">
                       Je winkel heeft geen grote structurele problemen. Er is nog wel optimalisatiepotentieel van ongeveer {results.percentage}% door kleine verbeteringen in de flow en presentatie.
