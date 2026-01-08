@@ -662,7 +662,7 @@ function App() {
                 {/* Pain Breakdown Section - Make the loss tangible */}
                 <div className="mt-8 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-2 border-red-200 p-6 shadow-md" data-testid="pain-breakdown">
                   <h3 className="text-xl font-bold text-red-700 mb-4">
-                    Dit loopt er nu weg uit je winkel...
+                    Dit betekent dat je op dit moment verliest aan omzet:
                   </h3>
                   
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
