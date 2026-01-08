@@ -709,20 +709,13 @@ function App() {
                       <div className="text-xl font-bold text-red-600">{formatCurrency(results.untappedPerHour)}</div>
                     </div>
                   </div>
-                  
-                  <div className="mt-4 bg-red-100 rounded-lg p-4 border-l-4 border-red-500">
-                    <p className="text-red-800 font-medium text-base italic">
-                      "Terwijl we hier zitten te praten, loopt er {formatCurrency(results.untappedPerHour)} per uur uw winkel uit."
-                    </p>
-                  </div>
                 </div>
 
                 {/* Problems & Solutions */}
                 {results.identifiedProblems.length > 0 && (
                   <div className="mt-8">
                     <div className="bg-gradient-to-r from-blue-100 to-blue-50 px-6 py-4 mb-6 rounded-lg">
-                      <h3 className="text-2xl font-semibold text-gray-800 tracking-wide flex items-center gap-2" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
-                        <span className="text-2xl">🔍</span>
+                      <h3 className="text-2xl font-semibold text-gray-800 tracking-wide" style={{fontFamily: "'Inter', -apple-system, system-ui, sans-serif", letterSpacing: '0.05em'}}>
                         Waarom blijft dit geld liggen?
                       </h3>
                     </div>
