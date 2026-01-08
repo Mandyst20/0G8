@@ -136,6 +136,12 @@ function App() {
     const untappedRevenue = yearlyRevenue * (percentage / 100);
     const potentialRevenue = yearlyRevenue + untappedRevenue;
 
+    // Pain breakdown calculations
+    const untappedPerMonth = untappedRevenue / 12;
+    const untappedPerWeek = untappedRevenue / 52;
+    const untappedPerDay = untappedRevenue / 312; // ~6 dagen per week open
+    const untappedPerHour = untappedRevenue / 2600; // ~50 uur per week, 52 weken
+
     // Get identified problems - only for questions with linkedBlock
     const identifiedProblems = answers.map((answer, index) => ({
       hasIssue: answer === false && questionsData[index].linkedBlock !== null,
@@ -149,7 +155,11 @@ function App() {
       potentialRevenue,
       percentage,
       nietWaarCount,
-      identifiedProblems
+      identifiedProblems,
+      untappedPerMonth,
+      untappedPerWeek,
+      untappedPerDay,
+      untappedPerHour
     });
   };
 
