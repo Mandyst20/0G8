@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+import ReactCompareImage from "react-compare-image";
 import "@/App.css";
 
 function App() {
