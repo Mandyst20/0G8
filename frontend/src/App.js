@@ -573,8 +573,8 @@ function App() {
                             data-testid={`question-${index + 1}-waar-btn`}
                             className={`flex-1 py-2.5 rounded-md transition-all duration-200 font-semibold text-base ${
                               formData[`q${index + 1}`] === true
-                                ? "bg-emerald-500 text-white"
-                                : "bg-white text-gray-700 border border-gray-300 hover:border-emerald-300"
+                                ? "bg-blue-500 text-white"
+                                : "bg-white text-gray-700 border border-gray-300 hover:border-blue-300"
                             }`}
                           >
                             Waar
@@ -584,8 +584,8 @@ function App() {
                             data-testid={`question-${index + 1}-niet-waar-btn`}
                             className={`flex-1 py-2.5 rounded-md transition-all duration-200 font-semibold text-base ${
                               formData[`q${index + 1}`] === false
-                                ? "bg-orange-500 text-white"
-                                : "bg-white text-gray-700 border border-gray-300 hover:border-orange-300"
+                                ? "bg-blue-500 text-white"
+                                : "bg-white text-gray-700 border border-gray-300 hover:border-blue-300"
                             }`}
                           >
                             Niet waar
