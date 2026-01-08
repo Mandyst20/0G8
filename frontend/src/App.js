@@ -903,14 +903,11 @@ function App() {
                   </p>
                   
                   <div className="rounded-lg overflow-hidden shadow-lg border-2 border-gray-200">
-                    <ReactCompareImage
-                      leftImage="https://images.unsplash.com/photo-1617994770688-25536afcd693?w=800&q=80"
-                      rightImage="https://images.unsplash.com/photo-1577020914435-7ae6b1091ebd?w=800&q=80"
-                      leftImageLabel="VOOR"
-                      rightImageLabel="NA"
-                      sliderLineColor="#3b82f6"
-                      sliderLineWidth={4}
-                      handleSize={48}
+                    <BeforeAfterSlider
+                      beforeImage="https://images.unsplash.com/photo-1617994770688-25536afcd693?w=800&q=80"
+                      afterImage="https://images.unsplash.com/photo-1577020914435-7ae6b1091ebd?w=800&q=80"
+                      beforeLabel="VOOR"
+                      afterLabel="NA"
                     />
                   </div>
                   
