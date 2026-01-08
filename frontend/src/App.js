@@ -778,6 +778,34 @@ function App() {
                   </div>
                 )}
 
+                {/* Before/After Comparison Slider */}
+                <div className="mt-10 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-lg border border-blue-200 p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2 flex items-center gap-2">
+                    <span className="text-2xl">🔄</span>
+                    Wat optimalisatie kan betekenen
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Sleep de lijn om het verschil te zien tussen een niet-geoptimaliseerde en een geoptimaliseerde winkelindeling.
+                  </p>
+                  
+                  <div className="rounded-lg overflow-hidden shadow-lg border-2 border-gray-200">
+                    <ReactCompareImage
+                      leftImage="https://images.unsplash.com/photo-1617994770688-25536afcd693?w=800&q=80"
+                      rightImage="https://images.unsplash.com/photo-1577020914435-7ae6b1091ebd?w=800&q=80"
+                      leftImageLabel="VOOR"
+                      rightImageLabel="NA"
+                      sliderLineColor="#3b82f6"
+                      sliderLineWidth={4}
+                      handleSize={48}
+                    />
+                  </div>
+                  
+                  <div className="flex justify-between mt-3 text-sm">
+                    <span className="text-red-600 font-medium">← Rommelig, onduidelijke routing</span>
+                    <span className="text-emerald-600 font-medium">Gestructureerd, heldere klantflow →</span>
+                  </div>
+                </div>
+
                 <div className="flex justify-center gap-4 pt-12">
                   <button
                     onClick={generatePDF}
